@@ -1,4 +1,4 @@
-module github.com/wasilibs/go-protoc-gen-grpc
+module github.com/wasilibs/go-protoc
 
 go 1.19
 

@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/wasilibs/go-protoc-gen-grpc/internal/wasix_32v1"
-	"github.com/wasilibs/go-protoc-gen-grpc/internal/wasm"
+	"github.com/wasilibs/go-protoc/internal/wasix_32v1"
+	"github.com/wasilibs/go-protoc/internal/wasm"
 	wazero "github.com/wasilibs/wazerox"
 	"github.com/wasilibs/wazerox/api"
 	"github.com/wasilibs/wazerox/experimental"

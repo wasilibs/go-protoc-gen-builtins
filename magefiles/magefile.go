@@ -5,5 +5,5 @@ import (
 )
 
 func init() {
-	magefiles.SetLibraryName("protoc_gen_grpc")
+	magefiles.SetLibraryName("protoc")
 }
