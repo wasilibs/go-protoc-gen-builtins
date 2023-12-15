@@ -29,9 +29,6 @@ func main() {
 
 	args := []string{"protoc"}
 	args = append(args, os.Args[1:]...)
-	for _, arg := range args {
-		println(arg)
-	}
 
 	fsCfg := wazero.NewFSConfig().(sysfs.FSConfig).WithSysFSMount(cmdFS{cwd: sysfs.DirFS("."), root: sysfs.DirFS("/")}, "/")
 	fsCfg = fsCfg.(sysfs.FSConfig).WithRawPaths()
