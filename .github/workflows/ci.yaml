@@ -14,14 +14,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mode:
-          - cgo
-          - wazero
         os:
           - macos-12
           - ubuntu-22.04
           # TODO(anuraaga): Fix windows
-          # - windows-2022
+          - windows-2022
     steps:
       - uses: actions/checkout@v4
         with:
