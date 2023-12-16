@@ -16,6 +16,7 @@ import (
 	"github.com/wasilibs/wazerox/experimental/sys"
 	"github.com/wasilibs/wazerox/experimental/sysfs"
 	"github.com/wasilibs/wazerox/imports/wasi_snapshot_preview1"
+	wazerosys "github.com/wasilibs/wazerox/sys"
 	wzsys "github.com/wasilibs/wazerox/sys"
 )
 
@@ -34,7 +35,6 @@ func main() {
 	fsCfg = fsCfg.(sysfs.FSConfig).WithRawPaths()
 
 	cfg := wazero.NewModuleConfig().
-		WithStartFunctions(). // Manually start after setting global state
 		WithSysNanosleep().
 		WithSysNanotime().
 		WithSysWalltime().
@@ -49,32 +49,11 @@ func main() {
 		cfg = cfg.WithEnv(k, v)
 	}
 
-	mod, err := rt.InstantiateWithConfig(ctx, wasm.Protoc, cfg)
+	_, err := rt.InstantiateWithConfig(ctx, wasm.Protoc, cfg)
 	if err != nil {
-		log.Fatal(err)
-	}
-
-	wd, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	malloc := mod.ExportedFunction("malloc")
-	res, err := malloc.Call(ctx, uint64(len(wd)+1))
-	if err != nil {
-		log.Fatal(err)
-	}
-	newWDPtr := uint32(res[0])
-	buf, ok := mod.Memory().Read(newWDPtr, uint32(len(wd)+1))
-	if !ok {
-		log.Fatal("failed to read cwd allocation")
-	}
-	copy(buf, wd)
-	buf[len(wd)] = 0
-
-	main := mod.ExportedFunction("_start")
-	_, err = main.Call(ctx)
-	if err != nil {
+		if sErr, ok := err.(*wazerosys.ExitError); ok {
+			os.Exit(int(sErr.ExitCode()))
+		}
 		log.Fatal(err)
 	}
 }
@@ -111,6 +90,7 @@ func (fs cmdFS) Rename(from string, to string) sys.Errno {
 func (fs cmdFS) Rmdir(path string) sys.Errno {
 	return fs.fs(path).Rmdir(path)
 }
+
 func (fs cmdFS) Unlink(path string) sys.Errno {
 	return fs.fs(path).Unlink(path)
 }

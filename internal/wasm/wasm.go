@@ -2,5 +2,5 @@ package wasm
 
 import _ "embed"
 
-//go:embed protoc
+//go:embed protoc.wasm
 var Protoc []byte
