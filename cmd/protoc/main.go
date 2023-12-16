@@ -16,7 +16,6 @@ import (
 	"github.com/wasilibs/wazerox/experimental/sys"
 	"github.com/wasilibs/wazerox/experimental/sysfs"
 	"github.com/wasilibs/wazerox/imports/wasi_snapshot_preview1"
-	wazerosys "github.com/wasilibs/wazerox/sys"
 	wzsys "github.com/wasilibs/wazerox/sys"
 )
 
@@ -51,7 +50,7 @@ func main() {
 
 	_, err := rt.InstantiateWithConfig(ctx, wasm.Protoc, cfg)
 	if err != nil {
-		if sErr, ok := err.(*wazerosys.ExitError); ok {
+		if sErr, ok := err.(*wzsys.ExitError); ok {
 			os.Exit(int(sErr.ExitCode()))
 		}
 		log.Fatal(err)
