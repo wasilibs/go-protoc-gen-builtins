@@ -9,7 +9,7 @@ import (
 )
 
 func TestBuf(t *testing.T) {
-	if err := os.RemoveAll("build"); err != nil {
+	if err := os.RemoveAll(filepath.Join("build", "buf")); err != nil {
 		t.Fatalf("failed to remove build directory: %v", err)
 	}
 
