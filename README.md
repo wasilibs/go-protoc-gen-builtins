@@ -13,7 +13,8 @@ already built-in to `protoc`.
 
 ## Installation
 
-Install the plugin you want using `go install`.
+Precompiled binaries are available in the [releases](https://github.com/wasilibs/go-protoc-gen-builtins/releases).
+Alternatively, install the plugin you want using `go install`.
 
 ```bash
 $ go install github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest
@@ -28,7 +29,7 @@ plugins:
     out: out/python
 ```
 
-To avoid installation, it can be convenient to use `go run` with `path` instead.
+To avoid installation entirely, it can be convenient to use `go run` with `path` instead.
 
 ```yaml
 version: v1
@@ -44,6 +45,11 @@ installation of tools, besides Go itself, on any platform that Go supports. The 
 codebase will use the same version of the tool with no special steps.
 
 For gRPC plugins, also see [go-protoc-gen-grpc][4].
+
+A full example is available at [example](./example/). To generate protos, enter the directory and run
+`go run github.com/bufbuild/buf/cmd/buf@v1.28.1 generate`. As long as your machine has Go installed,
+you will be able to generate protos. The first time using `go run` for a command, Go automatically builds
+it making it slower, but subsequent invocations should be quite fast.
 
 [1]: https://protobuf.dev/
 [2]: https://wazero.io/

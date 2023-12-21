@@ -2,4 +2,4 @@
 .vscode
 build
 dist
-buf.gen.yaml
+testdata/buf.gen.yaml
