@@ -2,28 +2,28 @@ version: v1
 plugins:
   - plugin: cpp
     out: ../build/buf/cpp
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-cpp"]
   - plugin: csharp
     out: ../build/buf/csharp
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-csharp"]
   - plugin: java
     out: ../build/buf/java
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-java"]
   - plugin: kotlin
     out: ../build/buf/kotlin
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-kotlin"]
   - plugin: objc
     out: ../build/buf/objc
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-objc"]
   - plugin: php
     out: ../build/buf/php
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-php"]
   - plugin: pyi
     out: ../build/buf/python
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-pyi"]
   - plugin: python
     out: ../build/buf/python
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-python"]
   - plugin: ruby
     out: ../build/buf/ruby
-    protoc_path: ./protoc.sh
+    path: ["go", "run", "../cmd/protoc-gen-ruby"]
