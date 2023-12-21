@@ -35,3 +35,4 @@ jobs:
 
       - name: build example
         run: go run github.com/bufbuild/buf/cmd/buf@v1.28.1 generate
+        working-directory: example
