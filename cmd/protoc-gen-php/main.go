@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/wasilibs/go-protoc/internal/runner"
-	"github.com/wasilibs/go-protoc/internal/wasm"
+	"github.com/wasilibs/go-protoc-gen-builtins/internal/runner"
+	"github.com/wasilibs/go-protoc-gen-builtins/internal/wasm"
 )
 
 func main() {

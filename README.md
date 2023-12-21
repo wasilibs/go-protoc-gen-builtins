@@ -16,7 +16,7 @@ already built-in to `protoc`.
 Install the plugin you want using `go install`.
 
 ```bash
-$ go install github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest
+$ go install github.com/wasilibs/go-protoc-gen-builtins-gen-builtins/cmd/protoc-gen-python@latest
 ```
 
 As long as `$GOPATH/bin`, e.g. `~/go/bin` is on the `PATH`, `buf` should find it automatically.
@@ -35,7 +35,7 @@ version: v1
 plugins:
   - plugin: python
     out: out/python
-    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest"]
+    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins-gen-builtins/cmd/protoc-gen-python@latest"]
 ```
 
 If invoking `buf` itself with `go run`, it is possible to have full protobuf generation with no
@@ -48,4 +48,4 @@ For gRPC plugins, also see [go-protoc-gen-grpc][4].
 [1]: https://protobuf.dev/
 [2]: https://wazero.io/
 [3]: https://buf.build/
-[4]: https://github.com/wasilibs/go-protoc-gen-grpc
+[4]: https://github.com/wasilibs/go-protoc-gen-builtins-gen-grpc
