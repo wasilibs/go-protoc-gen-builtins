@@ -3,7 +3,6 @@ package protoc_gen_builtins
 import (
 	"bytes"
 	_ "embed"
-	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -71,8 +70,13 @@ func TestBuf(t *testing.T) {
 			env := os.Environ()
 			pluginsDirAbs, _ := filepath.Abs(pluginsDir)
 			for i, val := range env {
-				if strings.HasPrefix(val, "PATH=") {
-					env[i] = fmt.Sprintf("PATH=%s%s%s", pluginsDirAbs, string(os.PathListSeparator), filepath.Join(runtime.GOROOT(), "bin"))
+				println(val)
+				pathVal := pluginsDirAbs + string(os.PathListSeparator) + filepath.Join(runtime.GOROOT(), "bin")
+				switch {
+				case strings.HasPrefix(val, "PATH="):
+					env[i] = "PATH=" + pathVal
+				case strings.HasPrefix(val, "%PATH%="):
+					env[i] = "%PATH%=" + pathVal
 				}
 			}
 			cmd := exec.Command(goExe, "run", "github.com/bufbuild/buf/cmd/buf@v1.28.1", "generate")
