@@ -119,3 +119,5 @@ checksum:
   name_template: 'checksums.txt'
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
+changelog:
+  skip: true
