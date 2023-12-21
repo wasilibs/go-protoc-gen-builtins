@@ -1,0 +1,121 @@
+builds:
+  - main: ./cmd/protoc-gen-cpp
+    id: cpp
+    binary: protoc-gen-cpp
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-csharp
+    id: csharp
+    binary: protoc-gen-csharp
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-java
+    id: java
+    binary: protoc-gen-java
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-kotlin
+    id: kotlin
+    binary: protoc-gen-kotlin
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-objc
+    id: objc
+    binary: protoc-gen-objc
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-php
+    id: php
+    binary: protoc-gen-php
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-pyi
+    id: pyi
+    binary: protoc-gen-pyi
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-python
+    id: python
+    binary: protoc-gen-python
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-ruby
+    id: ruby
+    binary: protoc-gen-ruby
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+  - main: ./cmd/protoc-gen-rust
+    id: rust
+    binary: protoc-gen-rust
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+archives:
+  - format_overrides:
+      - goos: windows
+        format: zip
+release:
+  mode: append
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
