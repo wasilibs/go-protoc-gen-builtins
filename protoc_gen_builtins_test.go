@@ -70,14 +70,11 @@ func TestBuf(t *testing.T) {
 			env := os.Environ()
 			pluginsDirAbs, _ := filepath.Abs(pluginsDir)
 			for i, val := range env {
-				println(val)
-				pathVal := pluginsDirAbs + string(os.PathListSeparator) + filepath.Join(runtime.GOROOT(), "bin")
-				switch {
-				case strings.HasPrefix(val, "PATH="):
+				if strings.HasPrefix(val, "PATH=") {
+					pathVal := pluginsDirAbs + string(os.PathListSeparator) + filepath.Join(runtime.GOROOT(), "bin")
 					env[i] = "PATH=" + pathVal
-				case strings.HasPrefix(val, "%PATH%="):
-					env[i] = "%PATH%=" + pathVal
 				}
+				println(env[i])
 			}
 			cmd := exec.Command(goExe, "run", "github.com/bufbuild/buf/cmd/buf@v1.28.1", "generate")
 			cmd.Stderr = &output
