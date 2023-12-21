@@ -1,4 +1,4 @@
-module github.com/wasilibs/go-protoc
+module github.com/wasilibs/go-protoc-gen-builtins
 
 go 1.19
 

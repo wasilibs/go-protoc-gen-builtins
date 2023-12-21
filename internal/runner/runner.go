@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/wasilibs/go-protoc/internal/wasix_32v1"
+	"github.com/wasilibs/go-protoc-gen-builtins/internal/wasix_32v1"
 	wazero "github.com/wasilibs/wazerox"
 	"github.com/wasilibs/wazerox/api"
 	"github.com/wasilibs/wazerox/experimental"
