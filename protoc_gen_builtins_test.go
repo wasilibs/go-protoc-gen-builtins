@@ -3,9 +3,11 @@ package protoc_gen_builtins
 import (
 	"bytes"
 	_ "embed"
+	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 )
@@ -17,6 +19,7 @@ var bufGenGorunYaml []byte
 var bufGenInstalledYaml []byte
 
 func TestBuf(t *testing.T) {
+	goExe := filepath.Join(runtime.GOROOT(), "bin", "go")
 	if err := os.RemoveAll(filepath.Join("build", "buf")); err != nil {
 		t.Fatalf("failed to remove build directory: %v", err)
 	}
@@ -29,7 +32,7 @@ func TestBuf(t *testing.T) {
 	plugins := []string{"cpp", "csharp", "java", "kotlin", "objc", "php", "pyi", "python", "ruby", "rust"}
 	for _, plugin := range plugins {
 		output := bytes.Buffer{}
-		cmd := exec.Command("go", "build", "-o", filepath.Join(pluginsDir, "protoc-gen-"+plugin), "./cmd/protoc-gen-"+plugin)
+		cmd := exec.Command(goExe, "build", "-o", filepath.Join(pluginsDir, "protoc-gen-"+plugin), "./cmd/protoc-gen-"+plugin)
 		cmd.Stderr = &output
 		cmd.Stdout = &output
 		if err := cmd.Run(); err != nil {
@@ -66,12 +69,13 @@ func TestBuf(t *testing.T) {
 
 			output := bytes.Buffer{}
 			env := os.Environ()
+			pluginsDirAbs, _ := filepath.Abs(pluginsDir)
 			for i, val := range env {
 				if strings.HasPrefix(val, "PATH=") {
-					env[i] = "PATH=" + filepath.Join("build", "plugins") + string(os.PathListSeparator) + val[len("PATH="):]
+					env[i] = fmt.Sprintf("PATH=%s%s%s", pluginsDirAbs, string(os.PathListSeparator), filepath.Join(runtime.GOROOT(), "bin"))
 				}
 			}
-			cmd := exec.Command("go", "run", "github.com/bufbuild/buf/cmd/buf@v1.28.1", "generate")
+			cmd := exec.Command(goExe, "run", "github.com/bufbuild/buf/cmd/buf@v1.28.1", "generate")
 			cmd.Stderr = &output
 			cmd.Stdout = &output
 			cmd.Env = env
