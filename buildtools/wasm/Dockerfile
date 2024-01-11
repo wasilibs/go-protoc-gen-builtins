@@ -2,7 +2,8 @@ FROM ghcr.io/wasilibs/wasix-sdk:sha-fc94d60
 
 RUN apt-get update && apt-get install -y binaryen git patch
 
-RUN git clone --recursive https://github.com/protocolbuffers/protobuf.git --branch v25.1 /workspace
+ADD buildtools/wasm/version.txt version.txt
+RUN git clone --recursive https://github.com/protocolbuffers/protobuf.git --branch $(cat version.txt | awk '{$1=$1};1') /workspace
 
 WORKDIR /workspace
 # From https://github.com/protocolbuffers/protobuf/blob/v25.1/src/google/protobuf/compiler/cpp/main.cc
