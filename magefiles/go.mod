@@ -27,5 +27,5 @@ require (
 require (
 	github.com/cli/go-gh/v2 v2.4.0
 	github.com/google/go-github/v58 v58.0.0
-	github.com/wasilibs/magefiles v0.0.0-20231128071155-0bcf9c2efa3c
+	github.com/wasilibs/magefiles v0.0.0-20240111081200-bb6d5c95f839
 )
