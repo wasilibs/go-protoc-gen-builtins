@@ -12,6 +12,12 @@ plugins:
   - plugin: grpc_csharp
     out: build/csharp
     path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_csharp@v1.60.0"]
+  - plugin: es
+    out: build/es
+    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-es/cmd/protoc-gen-es@v1.6.0"]
+  - plugin: connect-es
+    out: build/es
+    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-connect-es/cmd/protoc-gen-connect-es@v1.3.0"]
   - plugin: go
     out: build/go
     path: ["go", "run", "google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0"]
