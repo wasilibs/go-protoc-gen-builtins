@@ -64,3 +64,6 @@ plugins:
     out: build/rust
     opt: experimental-codegen=enabled,kernel=upb
     path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-rust@v1.25.1"]
+  - plugin: swift
+    out: build/swift
+    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-swift/cmd/protoc-gen-swift@v1.25.3-pre.1"]
