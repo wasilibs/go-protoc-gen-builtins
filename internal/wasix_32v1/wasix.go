@@ -3,8 +3,8 @@ package wasix_32v1
 import (
 	"context"
 
-	wazero "github.com/wasilibs/wazerox"
-	"github.com/wasilibs/wazerox/api"
+	"github.com/tetratelabs/wazero"
+	"github.com/tetratelabs/wazero/api"
 )
 
 const ModuleName = "wasix_32v1"
