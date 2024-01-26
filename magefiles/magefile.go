@@ -39,16 +39,16 @@ func UpdateUpstream() error {
 		return err
 	}
 
-	var releases []*github.RepositoryRelease
-	if err := gh.Get("repos/protocolbuffers/protobuf/releases?per_page=1", &releases); err != nil {
+	var release *github.RepositoryRelease
+	if err := gh.Get("repos/protocolbuffers/protobuf/releases/latest", &release); err != nil {
 		return err
 	}
 
-	if len(releases) == 0 {
+	if release == nil {
 		return errors.New("could not find releases")
 	}
 
-	latest := releases[0].GetTagName()
+	latest := release.GetTagName()
 	if latest == curr {
 		fmt.Println("up to date")
 		return nil
