@@ -27,6 +27,9 @@ plugins:
   - plugin: java
     out: build/java
     path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-java@v1.25.1"]
+  - plugin: grpc_java
+    out: build/java
+    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.61.0"]
   - plugin: kotlin
     out: build/kotlin
     path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-kotlin@v1.25.1"]
@@ -54,6 +57,9 @@ plugins:
   - plugin: grpc_python
     out: build/python
     path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_python@v1.60.0"]
+  - plugin: mypy
+    out: build/python/mypy
+    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-mypy/cmd/protoc-gen-mypy@v1.3.5"]
   - plugin: ruby
     out: build/ruby
     path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-ruby@v1.25.1"]
