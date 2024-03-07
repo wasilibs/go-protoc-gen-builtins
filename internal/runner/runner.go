@@ -10,7 +10,6 @@ import (
 	"github.com/tetratelabs/wazero"
 	"github.com/tetratelabs/wazero/api"
 	"github.com/tetratelabs/wazero/experimental"
-	"github.com/tetratelabs/wazero/experimental/opt"
 	"github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
 	wzsys "github.com/tetratelabs/wazero/sys"
 
@@ -20,7 +19,7 @@ import (
 func Run(name string, wasm []byte) {
 	ctx := context.Background()
 
-	rt := wazero.NewRuntimeWithConfig(ctx, opt.NewRuntimeConfigOptimizingCompiler().WithCoreFeatures(api.CoreFeaturesV2|experimental.CoreFeaturesThreads))
+	rt := wazero.NewRuntimeWithConfig(ctx, wazero.NewRuntimeConfig().WithCoreFeatures(api.CoreFeaturesV2|experimental.CoreFeaturesThreads))
 
 	wasi_snapshot_preview1.MustInstantiate(ctx, rt)
 	wasix_32v1.MustInstantiate(ctx, rt)
