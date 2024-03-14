@@ -5,14 +5,19 @@ RUN apt-get update && apt-get install -y binaryen git patch
 ADD buildtools/wasm/version.txt version.txt
 RUN git clone --recursive https://github.com/protocolbuffers/protobuf.git --branch $(cat version.txt | awk '{$1=$1};1') /workspace
 
+ENV CXXFLAGS "${CXXFLAGS} -O3 -pthread -D_WASI_EMULATED_MMAN -D_WASI_EMULATED_PROCESS_CLOCKS -DABSL_HAVE_MMAP"
+ENV LDFLAGS $LDFLAGS -lwasi-emulated-mman -lwasi-emulated-process-clocks -Wl,--max-memory=4294967296
+
 WORKDIR /workspace
+
+ADD buildtools/wasm/patch-absl.txt patch-absl.txt
+RUN cd third_party/abseil-cpp && patch -p1 < ../../patch-absl.txt
+
 # From https://github.com/protocolbuffers/protobuf/blob/v25.1/src/google/protobuf/compiler/cpp/main.cc
 ADD buildtools/wasm/main.cc main.cc
 ADD buildtools/wasm/create_plugin_entrypoints.py create_plugin_entrypoints.py
 RUN python3 create_plugin_entrypoints.py
 
-ENV CXXFLAGS "${CXXFLAGS} -O3 -pthread -D_WASI_EMULATED_MMAN -D_WASI_EMULATED_PROCESS_CLOCKS"
-ENV LDFLAGS $LDFLAGS -lwasi-emulated-mman -lwasi-emulated-process-clocks -Wl,--max-memory=4294967296
 
 RUN cmake -S . -B build
 RUN cmake --build build --target plugins

@@ -23,9 +23,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - run: git diff --exit-code
+        id: check-diff
+        continue-on-error: true
 
       - name: create PR
-        if: failure()
+        if: steps.check-diff.outcome == 'failure'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
