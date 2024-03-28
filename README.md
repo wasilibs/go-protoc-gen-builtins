@@ -47,7 +47,7 @@ codebase will use the same version of the tool with no special steps.
 For gRPC plugins, also see [go-protoc-gen-grpc][4].
 
 A full example is available at [example](./example/). To generate protos, enter the directory and run
-`go run github.com/bufbuild/buf/cmd/buf@v1.28.1 generate`. As long as your machine has Go installed,
+`go run github.com/bufbuild/buf/cmd/buf@v1.30.0 generate`. As long as your machine has Go installed,
 you will be able to generate protos. The first time using `go run` for a command, Go automatically builds
 it making it slower, but subsequent invocations should be quite fast.
 

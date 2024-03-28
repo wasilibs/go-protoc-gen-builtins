@@ -35,5 +35,5 @@ jobs:
         run: go run mage snapshot
 
       - name: build example
-        run: go run github.com/bufbuild/buf/cmd/buf@v1.28.1 generate
+        run: go run github.com/bufbuild/buf/cmd/buf@v1.30.0 generate
         working-directory: example
