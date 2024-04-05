@@ -31,3 +31,12 @@ var ProtocGenRuby []byte
 
 //go:embed protoc-gen-rust.wasm
 var ProtocGenRust []byte
+
+//go:embed protoc-gen-upb.wasm
+var ProtocGenUPB []byte
+
+//go:embed protoc-gen-upbdefs.wasm
+var ProtocGenUPBDefs []byte
+
+//go:embed protoc-gen-upb_minitable.wasm
+var ProtocGenUPBMinitable []byte

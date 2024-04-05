@@ -5,6 +5,7 @@ import (
 
 	"github.com/tetratelabs/wazero"
 	"github.com/tetratelabs/wazero/api"
+	"github.com/tetratelabs/wazero/experimental"
 )
 
 const ModuleName = "wasix_32v1"
@@ -95,6 +96,14 @@ func exportFunctions(builder wazero.HostModuleBuilder) {
 		Export("futex_wake_all")
 
 	builder.NewFunctionBuilder().
+		WithGoModuleFunction(stackCheckpointFn, []api.ValueType{i32, i32}, []api.ValueType{i32}).
+		Export("stack_checkpoint")
+
+	builder.NewFunctionBuilder().
+		WithGoModuleFunction(stackRestoreFn, []api.ValueType{i32, i64}, []api.ValueType{}).
+		Export("stack_restore")
+
+	builder.NewFunctionBuilder().
 		WithGoModuleFunction(threadExitFn, []api.ValueType{i32}, []api.ValueType{}).
 		Export("thread_exit")
 
@@ -133,6 +142,66 @@ var futexWakeAllFn = api.GoModuleFunc(func(_ context.Context, _ api.Module, _ []
 	panic("futex_wake_all")
 })
 
+var stackCheckpointFn = api.GoModuleFunc(func(ctx context.Context, mod api.Module, stack []uint64) {
+	snapshotPtr := stack[0]
+	retValPtr := stack[1]
+	d := ctx.Value(wasixDataKey{}).(*wasixData)
+
+	// We go ahead and save the entire C-stack for now
+	cstackPointer := uint32(mod.ExportedGlobal("__stack_pointer").Get())
+	cstackTop := uint32(mod.ExportedGlobal("__heap_base").Get())
+	cstackView, ok := mod.Memory().Read(cstackPointer, cstackTop-cstackPointer)
+	if !ok {
+		panic("read failed")
+	}
+	cstack := make([]byte, len(cstackView))
+	copy(cstack, cstackView)
+
+	sc := ctx.Value(experimental.SnapshotterKey{}).(experimental.Snapshotter)
+	s := sc.Snapshot()
+
+	idx := len(d.checkpoints)
+	d.checkpoints = append(d.checkpoints, wasixCheckpoint{
+		snapshot:      s,
+		retValPtr:     uint32(retValPtr),
+		cstackPointer: cstackPointer,
+		cstack:        cstack,
+	})
+
+	// pub struct StackSnapshot {
+	//    pub user: u64,
+	//    pub hash: u128,
+	// }
+	if !mod.Memory().WriteUint64Le(uint32(snapshotPtr), uint64(idx)) {
+		panic("write failed")
+	}
+	if !mod.Memory().WriteUint64Le(uint32(retValPtr), 0) {
+		panic("write failed")
+	}
+
+	stack[0] = 0
+})
+
+var stackRestoreFn = api.GoModuleFunc(func(ctx context.Context, mod api.Module, stack []uint64) {
+	snapshotPtr := stack[0]
+	ret := stack[1]
+
+	snapshotIdx, ok := mod.Memory().ReadUint64Le(uint32(snapshotPtr))
+	if !ok {
+		panic("read failed")
+	}
+
+	d := ctx.Value(wasixDataKey{}).(*wasixData)
+	c := d.checkpoints[snapshotIdx]
+
+	mod.ExportedGlobal("__stack_pointer").(api.MutableGlobal).Set(uint64(c.cstackPointer))
+	mod.Memory().Write(c.cstackPointer, c.cstack)
+
+	mod.Memory().WriteUint64Le(c.retValPtr, ret)
+	stack[0] = 0
+	c.snapshot.Restore(stack[:1])
+})
+
 var threadExitFn = api.GoModuleFunc(func(_ context.Context, _ api.Module, _ []uint64) {
 	// We do not execute the wasm module concurrently so know this is never called.
 	panic("thread_exit")
@@ -150,3 +219,23 @@ var threadSignalFn = api.GoModuleFunc(func(_ context.Context, _ api.Module, stac
 	// can ignore signals.
 	stack[0] = 0
 })
+
+type wasixCheckpoint struct {
+	snapshot      experimental.Snapshot
+	retValPtr     uint32
+	cstackPointer uint32
+	cstack        []byte
+}
+
+type wasixData struct {
+	checkpoints []wasixCheckpoint
+}
+
+type wasixDataKey struct{}
+
+func BackgroundContext() context.Context {
+	ctx := context.Background()
+	ctx = context.WithValue(ctx, experimental.EnableSnapshotterKey{}, true)
+	ctx = context.WithValue(ctx, wasixDataKey{}, &wasixData{})
+	return ctx
+}

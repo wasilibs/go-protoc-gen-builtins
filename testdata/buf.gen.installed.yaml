@@ -1,20 +1,26 @@
 version: v1
 plugins:
-  - plugin: cpp
-    out: ../build/buf/installed/cpp
-  - plugin: csharp
-    out: ../build/buf/installed/csharp
-  - plugin: java
-    out: ../build/buf/installed/java
-  - plugin: kotlin
-    out: ../build/buf/installed/kotlin
-  - plugin: objc
-    out: ../build/buf/installed/objc
-  - plugin: php
-    out: ../build/buf/installed/php
-  - plugin: pyi
-    out: ../build/buf/installed/python
-  - plugin: python
-    out: ../build/buf/installed/python
-  - plugin: ruby
-    out: ../build/buf/installed/ruby
+- plugin: cpp
+  out: ../build/buf/installed/cpp
+- plugin: csharp
+  out: ../build/buf/installed/csharp
+- plugin: java
+  out: ../build/buf/installed/java
+- plugin: kotlin
+  out: ../build/buf/installed/kotlin
+- plugin: objc
+  out: ../build/buf/installed/objc
+- plugin: php
+  out: ../build/buf/installed/php
+- plugin: pyi
+  out: ../build/buf/installed/python
+- plugin: python
+  out: ../build/buf/installed/python
+- plugin: ruby
+  out: ../build/buf/installed/ruby
+- plugin: upb
+  out: ../build/buf/installed/upb
+- plugin: upbdefs
+  out: ../build/buf/installed/upb
+- plugin: upb_minitable
+  out: ../build/buf/installed/upb
