@@ -27,13 +27,15 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.work
+          cache-dependency-path: "**/go.sum"
 
       - name: run checks
         run: go run build check
 
-      - name: build snapshot
-        run: go run build snapshot
-
       - name: build example
         run: go run github.com/bufbuild/buf/cmd/buf@v1.31.0 generate
         working-directory: example
+
+      - name: build snapshot
+        if: startsWith(matrix.os, 'ubuntu-')
+        run: go run build snapshot
