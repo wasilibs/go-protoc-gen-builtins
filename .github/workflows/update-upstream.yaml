@@ -18,7 +18,7 @@ jobs:
         with:
           go-version-file: go.work
 
-      - run: go run mage updateUpstream
+      - run: go run build update
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
@@ -26,9 +26,10 @@ jobs:
         id: check-diff
         continue-on-error: true
 
-      - name: create PR
+      - name: build and create PR
         if: steps.check-diff.outcome == 'failure'
         run: |
+          go run build -v wasm
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b update-upstream-${{ github.run_id }}

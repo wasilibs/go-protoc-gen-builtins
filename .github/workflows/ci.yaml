@@ -29,11 +29,11 @@ jobs:
           go-version-file: go.work
 
       - name: run checks
-        run: go run mage check
+        run: go run build check
 
       - name: build snapshot
-        run: go run mage snapshot
+        run: go run build snapshot
 
       - name: build example
-        run: go run github.com/bufbuild/buf/cmd/buf@v1.30.0 generate
+        run: go run github.com/bufbuild/buf/cmd/buf@v1.31.0 generate
         working-directory: example
