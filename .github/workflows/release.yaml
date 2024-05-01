@@ -18,6 +18,6 @@ jobs:
         with:
           go-version-file: go.work
 
-      - run: go run mage release
+      - run: go run build release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
