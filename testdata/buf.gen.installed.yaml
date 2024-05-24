@@ -18,3 +18,9 @@ plugins:
   out: ../out/buf/installed/python
 - plugin: ruby
   out: ../out/buf/installed/ruby
+- plugin: upb
+  out: ../out/buf/installed/upb
+- plugin: upbdefs
+  out: ../out/buf/installed/upb
+- plugin: upb_minitable
+  out: ../out/buf/installed/upb

@@ -28,7 +28,7 @@ func TestBuf(t *testing.T) {
 		t.Fatalf("failed to remove out directory: %v", err)
 	}
 
-	plugins := []string{"cpp", "csharp", "java", "kotlin", "objc", "php", "pyi", "python", "ruby", "rust"}
+	plugins := []string{"cpp", "csharp", "java", "kotlin", "objc", "php", "pyi", "python", "ruby", "rust", "upb", "upbdefs", "upb_minitable"}
 	for _, plugin := range plugins {
 		output := bytes.Buffer{}
 		cmd := exec.Command(goExe, "build", "-o", filepath.Join(pluginsDir, "protoc-gen-"+plugin), "./cmd/protoc-gen-"+plugin)
@@ -102,6 +102,9 @@ func TestBuf(t *testing.T) {
 				filepath.Join(outDir, "python", "helloworld_pb2.py"),
 				filepath.Join(outDir, "python", "helloworld_pb2.pyi"),
 				filepath.Join(outDir, "ruby", "helloworld_pb.rb"),
+				filepath.Join(outDir, "upb", "helloworld.upb_minitable.c"),
+				filepath.Join(outDir, "upb", "helloworld.upb.c"),
+				filepath.Join(outDir, "upb", "helloworld.upbdefs.c"),
 			} {
 				if _, err := os.Stat(path); err != nil {
 					t.Errorf("failed to stat %v: %v", path, err)

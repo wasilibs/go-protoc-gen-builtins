@@ -27,3 +27,12 @@ plugins:
 - plugin: ruby
   out: ../out/buf/gorun/ruby
   path: ["go", "run", "../cmd/protoc-gen-ruby"]
+- plugin: upb
+  out: ../out/buf/gorun/upb
+  path: ["go", "run", "../cmd/protoc-gen-upb"]
+- plugin: upbdefs
+  out: ../out/buf/gorun/upb
+  path: ["go", "run", "../cmd/protoc-gen-upbdefs"]
+- plugin: upb_minitable
+  out: ../out/buf/gorun/upb
+  path: ["go", "run", "../cmd/protoc-gen-upb_minitable"]

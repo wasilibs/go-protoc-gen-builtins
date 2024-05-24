@@ -1,7 +1,6 @@
 package runner
 
 import (
-	"context"
 	"crypto/rand"
 	"log"
 	"os"
@@ -17,7 +16,7 @@ import (
 )
 
 func Run(name string, wasm []byte) {
-	ctx := context.Background()
+	ctx := wasix_32v1.BackgroundContext()
 
 	rt := wazero.NewRuntimeWithConfig(ctx, wazero.NewRuntimeConfig().WithCoreFeatures(api.CoreFeaturesV2|experimental.CoreFeaturesThreads))
 
