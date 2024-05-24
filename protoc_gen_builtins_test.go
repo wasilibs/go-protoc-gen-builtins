@@ -19,13 +19,13 @@ var bufGenInstalledYaml []byte
 
 func TestBuf(t *testing.T) {
 	goExe := filepath.Join(runtime.GOROOT(), "bin", "go")
-	if err := os.RemoveAll(filepath.Join("build", "buf")); err != nil {
-		t.Fatalf("failed to remove build directory: %v", err)
+	if err := os.RemoveAll(filepath.Join("out", "buf")); err != nil {
+		t.Fatalf("failed to remove out directory: %v", err)
 	}
 
-	pluginsDir := filepath.Join("build", "plugins")
+	pluginsDir := filepath.Join("out", "plugins")
 	if err := os.RemoveAll(pluginsDir); err != nil {
-		t.Fatalf("failed to remove build directory: %v", err)
+		t.Fatalf("failed to remove out directory: %v", err)
 	}
 
 	plugins := []string{"cpp", "csharp", "java", "kotlin", "objc", "php", "pyi", "python", "ruby", "rust", "upb", "upbdefs", "upb_minitable"}
@@ -82,7 +82,7 @@ func TestBuf(t *testing.T) {
 					env[i] = "PATH=" + pathVal
 				}
 			}
-			cmd := exec.Command(goExe, "run", "github.com/bufbuild/buf/cmd/buf@v1.30.0", "generate")
+			cmd := exec.Command(goExe, "run", "github.com/bufbuild/buf/cmd/buf@v1.31.0", "generate")
 			cmd.Stderr = &output
 			cmd.Stdout = &output
 			cmd.Env = env
@@ -91,7 +91,7 @@ func TestBuf(t *testing.T) {
 				t.Fatalf("failed to run buf: %v\n%v", err, output.String())
 			}
 
-			outDir := filepath.Join("build", "buf", tc.name)
+			outDir := filepath.Join("out", "buf", tc.name)
 			for _, path := range []string{
 				filepath.Join(outDir, "cpp", "helloworld.pb.cc"),
 				filepath.Join(outDir, "csharp", "Helloworld.cs"),

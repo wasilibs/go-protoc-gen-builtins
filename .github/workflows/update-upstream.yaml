@@ -17,8 +17,9 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.work
+          cache-dependency-path: "**/go.sum"
 
-      - run: go run mage updateUpstream
+      - run: go run build update
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
@@ -26,7 +27,7 @@ jobs:
         id: check-diff
         continue-on-error: true
 
-      - name: create PR
+      - name: build and create PR
         if: steps.check-diff.outcome == 'failure'
         run: |
           git config --global user.name "github-actions[bot]"

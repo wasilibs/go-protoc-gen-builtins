@@ -1,38 +1,38 @@
 version: v1
 plugins:
 - plugin: cpp
-  out: ../build/buf/gorun/cpp
+  out: ../out/buf/gorun/cpp
   path: ["go", "run", "../cmd/protoc-gen-cpp"]
 - plugin: csharp
-  out: ../build/buf/gorun/csharp
+  out: ../out/buf/gorun/csharp
   path: ["go", "run", "../cmd/protoc-gen-csharp"]
 - plugin: java
-  out: ../build/buf/gorun/java
+  out: ../out/buf/gorun/java
   path: ["go", "run", "../cmd/protoc-gen-java"]
 - plugin: kotlin
-  out: ../build/buf/gorun/kotlin
+  out: ../out/buf/gorun/kotlin
   path: ["go", "run", "../cmd/protoc-gen-kotlin"]
 - plugin: objc
-  out: ../build/buf/gorun/objc
+  out: ../out/buf/gorun/objc
   path: ["go", "run", "../cmd/protoc-gen-objc"]
 - plugin: php
-  out: ../build/buf/gorun/php
+  out: ../out/buf/gorun/php
   path: ["go", "run", "../cmd/protoc-gen-php"]
 - plugin: pyi
-  out: ../build/buf/gorun/python
+  out: ../out/buf/gorun/python
   path: ["go", "run", "../cmd/protoc-gen-pyi"]
 - plugin: python
-  out: ../build/buf/gorun/python
+  out: ../out/buf/gorun/python
   path: ["go", "run", "../cmd/protoc-gen-python"]
 - plugin: ruby
-  out: ../build/buf/gorun/ruby
+  out: ../out/buf/gorun/ruby
   path: ["go", "run", "../cmd/protoc-gen-ruby"]
 - plugin: upb
-  out: ../build/buf/gorun/upb
+  out: ../out/buf/gorun/upb
   path: ["go", "run", "../cmd/protoc-gen-upb"]
 - plugin: upbdefs
-  out: ../build/buf/gorun/upb
+  out: ../out/buf/gorun/upb
   path: ["go", "run", "../cmd/protoc-gen-upbdefs"]
 - plugin: upb_minitable
-  out: ../build/buf/gorun/upb
+  out: ../out/buf/gorun/upb
   path: ["go", "run", "../cmd/protoc-gen-upb_minitable"]
