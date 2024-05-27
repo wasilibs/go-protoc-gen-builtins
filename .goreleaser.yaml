@@ -10,6 +10,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-csharp
     id: csharp
     binary: protoc-gen-csharp
@@ -21,6 +22,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-java
     id: java
     binary: protoc-gen-java
@@ -32,6 +34,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-kotlin
     id: kotlin
     binary: protoc-gen-kotlin
@@ -43,6 +46,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-objc
     id: objc
     binary: protoc-gen-objc
@@ -54,6 +58,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-php
     id: php
     binary: protoc-gen-php
@@ -65,6 +70,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-pyi
     id: pyi
     binary: protoc-gen-pyi
@@ -76,6 +82,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-python
     id: python
     binary: protoc-gen-python
@@ -87,6 +94,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-ruby
     id: ruby
     binary: protoc-gen-ruby
@@ -98,6 +106,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
   - main: ./cmd/protoc-gen-rust
     id: rust
     binary: protoc-gen-rust
@@ -109,6 +118,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
 archives:
   - format_overrides:
       - goos: windows
@@ -116,7 +126,7 @@ archives:
 release:
   mode: append
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
 changelog:
