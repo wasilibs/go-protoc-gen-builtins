@@ -22,7 +22,7 @@ jobs:
       - run: go run build update
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - run: git diff --exit-code
         id: check-diff
         continue-on-error: true

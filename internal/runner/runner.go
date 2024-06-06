@@ -11,9 +11,9 @@ import (
 	"github.com/tetratelabs/wazero/experimental"
 	"github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
 	wzsys "github.com/tetratelabs/wazero/sys"
+	"github.com/wasilibs/wazero-helpers/allocator"
 
 	"github.com/wasilibs/go-protoc-gen-builtins/internal/wasix_32v1"
-	"github.com/wasilibs/wazero-helpers/allocator"
 )
 
 func Run(name string, wasm []byte) {
@@ -44,7 +44,7 @@ func Run(name string, wasm []byte) {
 
 	_, err := rt.InstantiateWithConfig(ctx, wasm, cfg)
 	if err != nil {
-		if sErr, ok := err.(*wzsys.ExitError); ok {
+		if sErr, ok := err.(*wzsys.ExitError); ok { //nolint:errorlint
 			os.Exit(int(sErr.ExitCode()))
 		}
 		log.Fatal(err)
