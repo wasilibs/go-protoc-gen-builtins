@@ -1,8 +1,8 @@
 # go-protoc-gen-builtins
 
-go-protoc-gen-builtins is a distribution of the code generator plugins from protoc, the 
+go-protoc-gen-builtins is a distribution of the code generator plugins from protoc, the
 [protocol buffers][1] compiler, that can be built with Go. It does not actually reimplement any
-functionality of protoc in Go, instead compiling the original source code to WebAssembly, and 
+functionality of protoc in Go, instead compiling the original source code to WebAssembly, and
 executing with the pure Go Wasm runtime [wazero][2]. This means that `go install` or `go run`
 can be used to execute it, with no need to rely on external package managers such as Homebrew,
 on any platform that Go supports.
@@ -36,7 +36,12 @@ version: v1
 plugins:
   - plugin: python
     out: out/python
-    path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest"]
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest",
+      ]
 ```
 
 If invoking `buf` itself with `go run`, it is possible to have full protobuf generation with no

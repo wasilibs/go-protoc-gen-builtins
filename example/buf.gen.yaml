@@ -1,75 +1,185 @@
 version: v1
 plugins:
-- plugin: cpp
-  out: out/cpp
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-cpp@v1.25.1"]
-- plugin: grpc_cpp
-  out: out/cpp
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_cpp@v1.60.0"]
-- plugin: csharp
-  out: out/csharp
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-csharp@v1.25.1"]
-- plugin: grpc_csharp
-  out: out/csharp
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_csharp@v1.60.0"]
-- plugin: es
-  out: out/es
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-es/cmd/protoc-gen-es@v1.6.0"]
-- plugin: connect-es
-  out: out/es
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-connect-es/cmd/protoc-gen-connect-es@v1.3.0"]
-- plugin: go
-  out: out/go
-  path: ["go", "run", "google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0"]
-- plugin: go-grpc
-  out: out/go
-  path: ["go", "run", "google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0"]
-- plugin: java
-  out: out/java
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-java@v1.25.1"]
-- plugin: grpc_java
-  out: out/java
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.61.0"]
-- plugin: kotlin
-  out: out/kotlin
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-kotlin@v1.25.1"]
-- plugin: objc
-  out: out/objc
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-objc@v1.25.1"]
-- plugin: grpc_objective_c
-  out: out/objective_c
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_objective_c@v1.60.0"]
-- plugin: grpc_node
-  out: out/node
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_node@v1.60.0"]
-- plugin: php
-  out: out/php
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-php@v1.25.1"]
-- plugin: grpc_php
-  out: out/php
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_php@v1.60.0"]
-- plugin: pyi
-  out: out/python
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-pyi@v1.25.1"]
-- plugin: python
-  out: out/python
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@v1.25.1"]
-- plugin: grpc_python
-  out: out/python
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_python@v1.60.0"]
-- plugin: mypy
-  out: out/python/mypy
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-mypy/cmd/protoc-gen-mypy@v1.3.5"]
-- plugin: ruby
-  out: out/ruby
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-ruby@v1.25.1"]
-- plugin: grpc_ruby
-  out: out/ruby
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_ruby@v1.60.0"]
-- plugin: rust
-  out: out/rust
-  opt: experimental-codegen=enabled,kernel=upb
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-rust@v1.25.1"]
-- plugin: swift
-  out: out/swift
-  path: ["go", "run", "github.com/wasilibs/go-protoc-gen-swift/cmd/protoc-gen-swift@v1.25.3-pre.1"]
+  - plugin: cpp
+    out: out/cpp
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-cpp@v1.25.1",
+      ]
+  - plugin: grpc_cpp
+    out: out/cpp
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_cpp@v1.60.0",
+      ]
+  - plugin: csharp
+    out: out/csharp
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-csharp@v1.25.1",
+      ]
+  - plugin: grpc_csharp
+    out: out/csharp
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_csharp@v1.60.0",
+      ]
+  - plugin: es
+    out: out/es
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-es/cmd/protoc-gen-es@v1.6.0",
+      ]
+  - plugin: connect-es
+    out: out/es
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-connect-es/cmd/protoc-gen-connect-es@v1.3.0",
+      ]
+  - plugin: go
+    out: out/go
+    path: ["go", "run", "google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0"]
+  - plugin: go-grpc
+    out: out/go
+    path: ["go", "run", "google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0"]
+  - plugin: java
+    out: out/java
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-java@v1.25.1",
+      ]
+  - plugin: grpc_java
+    out: out/java
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.61.0",
+      ]
+  - plugin: kotlin
+    out: out/kotlin
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-kotlin@v1.25.1",
+      ]
+  - plugin: objc
+    out: out/objc
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-objc@v1.25.1",
+      ]
+  - plugin: grpc_objective_c
+    out: out/objective_c
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_objective_c@v1.60.0",
+      ]
+  - plugin: grpc_node
+    out: out/node
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_node@v1.60.0",
+      ]
+  - plugin: php
+    out: out/php
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-php@v1.25.1",
+      ]
+  - plugin: grpc_php
+    out: out/php
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_php@v1.60.0",
+      ]
+  - plugin: pyi
+    out: out/python
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-pyi@v1.25.1",
+      ]
+  - plugin: python
+    out: out/python
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@v1.25.1",
+      ]
+  - plugin: grpc_python
+    out: out/python
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_python@v1.60.0",
+      ]
+  - plugin: mypy
+    out: out/python/mypy
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-mypy/cmd/protoc-gen-mypy@v1.3.5",
+      ]
+  - plugin: ruby
+    out: out/ruby
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-ruby@v1.25.1",
+      ]
+  - plugin: grpc_ruby
+    out: out/ruby
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_ruby@v1.60.0",
+      ]
+  - plugin: rust
+    out: out/rust
+    opt: experimental-codegen=enabled,kernel=upb
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-rust@v1.25.1",
+      ]
+  - plugin: swift
+    out: out/swift
+    path:
+      [
+        "go",
+        "run",
+        "github.com/wasilibs/go-protoc-gen-swift/cmd/protoc-gen-swift@v1.25.3-pre.1",
+      ]

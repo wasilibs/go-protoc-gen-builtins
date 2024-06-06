@@ -1,38 +1,38 @@
 version: v1
 plugins:
-- plugin: cpp
-  out: ../out/buf/gorun/cpp
-  path: ["go", "run", "../cmd/protoc-gen-cpp"]
-- plugin: csharp
-  out: ../out/buf/gorun/csharp
-  path: ["go", "run", "../cmd/protoc-gen-csharp"]
-- plugin: java
-  out: ../out/buf/gorun/java
-  path: ["go", "run", "../cmd/protoc-gen-java"]
-- plugin: kotlin
-  out: ../out/buf/gorun/kotlin
-  path: ["go", "run", "../cmd/protoc-gen-kotlin"]
-- plugin: objc
-  out: ../out/buf/gorun/objc
-  path: ["go", "run", "../cmd/protoc-gen-objc"]
-- plugin: php
-  out: ../out/buf/gorun/php
-  path: ["go", "run", "../cmd/protoc-gen-php"]
-- plugin: pyi
-  out: ../out/buf/gorun/python
-  path: ["go", "run", "../cmd/protoc-gen-pyi"]
-- plugin: python
-  out: ../out/buf/gorun/python
-  path: ["go", "run", "../cmd/protoc-gen-python"]
-- plugin: ruby
-  out: ../out/buf/gorun/ruby
-  path: ["go", "run", "../cmd/protoc-gen-ruby"]
-- plugin: upb
-  out: ../out/buf/gorun/upb
-  path: ["go", "run", "../cmd/protoc-gen-upb"]
-- plugin: upbdefs
-  out: ../out/buf/gorun/upb
-  path: ["go", "run", "../cmd/protoc-gen-upbdefs"]
-- plugin: upb_minitable
-  out: ../out/buf/gorun/upb
-  path: ["go", "run", "../cmd/protoc-gen-upb_minitable"]
+  - plugin: cpp
+    out: ../out/buf/gorun/cpp
+    path: ["go", "run", "../cmd/protoc-gen-cpp"]
+  - plugin: csharp
+    out: ../out/buf/gorun/csharp
+    path: ["go", "run", "../cmd/protoc-gen-csharp"]
+  - plugin: java
+    out: ../out/buf/gorun/java
+    path: ["go", "run", "../cmd/protoc-gen-java"]
+  - plugin: kotlin
+    out: ../out/buf/gorun/kotlin
+    path: ["go", "run", "../cmd/protoc-gen-kotlin"]
+  - plugin: objc
+    out: ../out/buf/gorun/objc
+    path: ["go", "run", "../cmd/protoc-gen-objc"]
+  - plugin: php
+    out: ../out/buf/gorun/php
+    path: ["go", "run", "../cmd/protoc-gen-php"]
+  - plugin: pyi
+    out: ../out/buf/gorun/python
+    path: ["go", "run", "../cmd/protoc-gen-pyi"]
+  - plugin: python
+    out: ../out/buf/gorun/python
+    path: ["go", "run", "../cmd/protoc-gen-python"]
+  - plugin: ruby
+    out: ../out/buf/gorun/ruby
+    path: ["go", "run", "../cmd/protoc-gen-ruby"]
+  - plugin: upb
+    out: ../out/buf/gorun/upb
+    path: ["go", "run", "../cmd/protoc-gen-upb"]
+  - plugin: upbdefs
+    out: ../out/buf/gorun/upb
+    path: ["go", "run", "../cmd/protoc-gen-upbdefs"]
+  - plugin: upb_minitable
+    out: ../out/buf/gorun/upb
+    path: ["go", "run", "../cmd/protoc-gen-upb_minitable"]

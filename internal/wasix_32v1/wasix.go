@@ -42,12 +42,12 @@ type Builder interface {
 	// Compile compiles the ModuleName module. Call this before Instantiate.
 	//
 	// Note: This has the same effect as the same function on wazero.HostModuleBuilder.
-	Compile(context.Context) (wazero.CompiledModule, error)
+	Compile(ctx context.Context) (wazero.CompiledModule, error)
 
 	// Instantiate instantiates the ModuleName module and returns a function to close it.
 	//
 	// Note: This has the same effect as the same function on wazero.HostModuleBuilder.
-	Instantiate(context.Context) (api.Closer, error)
+	Instantiate(ctx context.Context) (api.Closer, error)
 }
 
 // NewBuilder returns a new Builder.
