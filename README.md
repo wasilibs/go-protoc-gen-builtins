@@ -37,11 +37,9 @@ plugins:
   - plugin: python
     out: out/python
     path:
-      [
-        "go",
-        "run",
-        "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest",
-      ]
+      - "go"
+      - "run"
+      - "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest"
 ```
 
 If invoking `buf` itself with `go run`, it is possible to have full protobuf generation with no
