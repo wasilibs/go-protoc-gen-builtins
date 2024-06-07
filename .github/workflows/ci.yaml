@@ -33,7 +33,7 @@ jobs:
         run: go run build check
 
       - name: build example
-        run: go run github.com/bufbuild/buf/cmd/buf@v1.31.0 generate
+        run: go run github.com/bufbuild/buf/cmd/buf@v1.32.0 generate
         working-directory: example
 
       - name: build snapshot

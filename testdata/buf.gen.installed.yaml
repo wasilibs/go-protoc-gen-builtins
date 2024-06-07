@@ -1,26 +1,26 @@
-version: v1
+version: v2
 plugins:
-  - plugin: cpp
+  - local: protoc-gen-cpp
     out: ../out/buf/installed/cpp
-  - plugin: csharp
+  - local: protoc-gen-csharp
     out: ../out/buf/installed/csharp
-  - plugin: java
+  - local: protoc-gen-java
     out: ../out/buf/installed/java
-  - plugin: kotlin
+  - local: protoc-gen-kotlin
     out: ../out/buf/installed/kotlin
-  - plugin: objc
+  - local: protoc-gen-objc
     out: ../out/buf/installed/objc
-  - plugin: php
+  - local: protoc-gen-php
     out: ../out/buf/installed/php
-  - plugin: pyi
+  - local: protoc-gen-pyi
     out: ../out/buf/installed/python
-  - plugin: python
+  - local: protoc-gen-python
     out: ../out/buf/installed/python
-  - plugin: ruby
+  - local: protoc-gen-ruby
     out: ../out/buf/installed/ruby
-  - plugin: upb
+  - local: protoc-gen-upb
     out: ../out/buf/installed/upb
-  - plugin: upbdefs
+  - local: protoc-gen-upbdefs
     out: ../out/buf/installed/upb
-  - plugin: upb_minitable
+  - local: protoc-gen-upb_minitable
     out: ../out/buf/installed/upb
