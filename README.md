@@ -23,23 +23,24 @@ $ go install github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@la
 As long as `$GOPATH/bin`, e.g. `~/go/bin` is on the `PATH`, `buf` should find it automatically.
 
 ```yaml
-version: v1
+version: v2
 plugins:
-  - plugin: python
+  - local: protoc-gen-python
     out: out/python
 ```
+
+Note that with v2 format, you must use `local` and `protoc-gen-<plugin>`, not `protoc_builtin`.
 
 To avoid installation entirely, it can be convenient to use `go run` with `path` instead.
 
 ```yaml
-version: v1
+version: v2
 plugins:
-  - plugin: python
+  - local:
+      - go
+      - run
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest
     out: out/python
-    path:
-      - "go"
-      - "run"
-      - "github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest"
 ```
 
 If invoking `buf` itself with `go run`, it is possible to have full protobuf generation with no
@@ -50,7 +51,7 @@ codebase will use the same version of the tool with no special steps.
 For gRPC plugins, also see [go-protoc-gen-grpc][4].
 
 A full example is available at [example](./example/). To generate protos, enter the directory and run
-`go run github.com/bufbuild/buf/cmd/buf@v1.31.0 generate`. As long as your machine has Go installed,
+`go run github.com/bufbuild/buf/cmd/buf@v1.32.0 generate`. As long as your machine has Go installed,
 you will be able to generate protos. The first time using `go run` for a command, Go automatically builds
 it making it slower, but subsequent invocations should be quite fast.
 

@@ -1,38 +1,62 @@
-version: v1
+version: v2
 plugins:
-  - plugin: cpp
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-cpp
     out: ../out/buf/gorun/cpp
-    path: ["go", "run", "../cmd/protoc-gen-cpp"]
-  - plugin: csharp
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-csharp
     out: ../out/buf/gorun/csharp
-    path: ["go", "run", "../cmd/protoc-gen-csharp"]
-  - plugin: java
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-java
     out: ../out/buf/gorun/java
-    path: ["go", "run", "../cmd/protoc-gen-java"]
-  - plugin: kotlin
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-kotlin
     out: ../out/buf/gorun/kotlin
-    path: ["go", "run", "../cmd/protoc-gen-kotlin"]
-  - plugin: objc
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-objc
     out: ../out/buf/gorun/objc
-    path: ["go", "run", "../cmd/protoc-gen-objc"]
-  - plugin: php
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-php
     out: ../out/buf/gorun/php
-    path: ["go", "run", "../cmd/protoc-gen-php"]
-  - plugin: pyi
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-pyi
     out: ../out/buf/gorun/python
-    path: ["go", "run", "../cmd/protoc-gen-pyi"]
-  - plugin: python
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-python
     out: ../out/buf/gorun/python
-    path: ["go", "run", "../cmd/protoc-gen-python"]
-  - plugin: ruby
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-ruby
     out: ../out/buf/gorun/ruby
-    path: ["go", "run", "../cmd/protoc-gen-ruby"]
-  - plugin: upb
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-upb
     out: ../out/buf/gorun/upb
-    path: ["go", "run", "../cmd/protoc-gen-upb"]
-  - plugin: upbdefs
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-upbdefs
     out: ../out/buf/gorun/upb
-    path: ["go", "run", "../cmd/protoc-gen-upbdefs"]
-  - plugin: upb_minitable
+  - local:
+      - go
+      - run
+      - ../cmd/protoc-gen-upb_minitable
     out: ../out/buf/gorun/upb
-    path: ["go", "run", "../cmd/protoc-gen-upb_minitable"]
