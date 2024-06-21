@@ -40,3 +40,6 @@ var ProtocGenUPBDefs []byte
 
 //go:embed protoc-gen-upb_minitable.wasm
 var ProtocGenUPBMinitable []byte
+
+//go:embed memory.wasm
+var Memory []byte
