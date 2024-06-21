@@ -1,3 +1,4 @@
+project_name: protoc-gen-builtins
 builds:
   - main: ./cmd/protoc-gen-cpp
     id: cpp
@@ -110,6 +111,42 @@ builds:
   - main: ./cmd/protoc-gen-rust
     id: rust
     binary: protoc-gen-rust
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+      - windows_arm64
+  - main: ./cmd/protoc-gen-upb
+    id: upb
+    binary: protoc-gen-upb
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+      - windows_arm64
+  - main: ./cmd/protoc-gen-upb_minitable
+    id: upb_minitable
+    binary: protoc-gen-upb_minitable
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+      - windows_arm64
+  - main: ./cmd/protoc-gen-upbdefs
+    id: upbdefs
+    binary: protoc-gen-upbdefs
     env:
       - CGO_ENABLED=0
     targets:
