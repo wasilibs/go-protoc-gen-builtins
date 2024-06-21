@@ -6,24 +6,6 @@ on:
       - v*
 
 jobs:
-  build:
-    name: Release
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-go@v5
-        with:
-          go-version-file: go.work
-
-      - run: go run build release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: actions/attest-build-provenance@v1
-        with:
-          subject-path: |
-            dist/*.tar.gz
-            dist/*.zip
+  release:
+    uses: wasilibs/actions/.github/workflows/release.yaml@821bfa94b1bb8620e0c4a93bf58b6fc6bb441b22
+    secrets: inherit

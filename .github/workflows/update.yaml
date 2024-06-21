@@ -1,0 +1,15 @@
+name: "Update Upstream"
+
+on:
+  schedule:
+    - cron: "5 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  attestations: write
+
+jobs:
+  build:
+    uses: wasilibs/actions/.github/workflows/update.yaml@821bfa94b1bb8620e0c4a93bf58b6fc6bb441b22
+    secrets: inherit
