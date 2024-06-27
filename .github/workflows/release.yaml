@@ -5,6 +5,11 @@ on:
     tags:
       - v*
 
+permissions:
+  id-token: write
+  attestations: write
+  contents: write
+
 jobs:
   release:
     uses: wasilibs/actions/.github/workflows/release.yaml@435fbabb9723e77fd6ba71e6ec8744efd1a56be1
