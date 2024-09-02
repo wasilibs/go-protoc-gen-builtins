@@ -1,0 +1,24 @@
+diff --git a/upb/port/def.inc b/upb/port/def.inc
+index 19ac51f12..9ea36697c 100644
+--- a/upb/port/def.inc
++++ b/upb/port/def.inc
+@@ -43,7 +43,6 @@
+ #endif
+ 
+ #include <assert.h>
+-#include <setjmp.h>
+ #include <stdbool.h>
+ #include <stdint.h>
+ #include <stdio.h>
+@@ -176,8 +175,9 @@ Error, UINTPTR_MAX is undefined
+ #define UPB_SETJMP(buf) _setjmp(buf)
+ #define UPB_LONGJMP(buf, val) _longjmp(buf, val)
+ #else
+-#define UPB_SETJMP(buf) setjmp(buf)
+-#define UPB_LONGJMP(buf, val) longjmp(buf, val)
++typedef void* jmp_buf;
++#define UPB_SETJMP(buf) 0
++#define UPB_LONGJMP(buf, val) 0
+ #endif
+ 
+ #ifdef __GNUC__

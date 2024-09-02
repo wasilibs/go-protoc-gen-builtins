@@ -15,6 +15,9 @@ WORKDIR /workspace
 ADD buildtools/wasm/patch-absl.txt patch-absl.txt
 RUN cd third_party/abseil-cpp && patch -p1 < ../../patch-absl.txt
 
+ADD buildtools/wasm/patch.txt patch.txt
+RUN patch -p1 < patch.txt
+
 # From https://github.com/protocolbuffers/protobuf/blob/v25.1/src/google/protobuf/compiler/cpp/main.cc
 ADD buildtools/wasm/main.cc main.cc
 ADD buildtools/wasm/create_plugin_entrypoints.py create_plugin_entrypoints.py
