@@ -1,3 +1,13 @@
++++ b/upb/json/decode.c
+@@ -12,7 +12,6 @@
+ #include <inttypes.h>
+ #include <limits.h>
+ #include <math.h>
+-#include <setjmp.h>
+ #include <stdarg.h>
+ #include <stddef.h>
+ #include <stdint.h>
+diff --git a/upb/json/encode.c b/upb/json/encode.c
 diff --git a/upb/port/def.inc b/upb/port/def.inc
 index 19ac51f12..9ea36697c 100644
 --- a/upb/port/def.inc
@@ -22,3 +32,28 @@ index 19ac51f12..9ea36697c 100644
  #endif
  
  #ifdef __GNUC__
+diff --git a/upb/util/required_fields.c b/upb/util/required_fields.c
+index c3723863c..b453cd151 100644
+--- a/upb/util/required_fields.c
++++ b/upb/util/required_fields.c
+@@ -9,7 +9,6 @@
+
+ #include <assert.h>
+ #include <inttypes.h>
+-#include <setjmp.h>
+ #include <stdarg.h>
+ #include <stdbool.h>
+ #include <stddef.h>
+diff --git a/upb/wire/encode.c b/upb/wire/encode.c
+index 5764199e4..6d8241f57 100644
+--- a/upb/wire/encode.c
++++ b/upb/wire/encode.c
+@@ -9,7 +9,6 @@
+
+ #include "upb/wire/encode.h"
+
+-#include <setjmp.h>
+ #include <stdbool.h>
+ #include <stdint.h>
+ #include <string.h>
+	
