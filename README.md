@@ -58,4 +58,4 @@ it making it slower, but subsequent invocations should be quite fast.
 [1]: https://protobuf.dev/
 [2]: https://wazero.io/
 [3]: https://buf.build/
-[4]: https://github.com/wasilibs/go-protoc-gen-builtins-gen-grpc
+[4]: https://github.com/wasilibs/go-protoc-gen-grpc
