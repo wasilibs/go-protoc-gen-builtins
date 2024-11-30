@@ -16,8 +16,8 @@ plugins = [
     },
     {
         "name": "kotlin",
-        "include": "google/protobuf/compiler/java/kotlin_generator.h",
-        "generator": "::google::protobuf::compiler::java::KotlinGenerator",
+        "include": "google/protobuf/compiler/kotlin/generator.h",
+        "generator": "::google::protobuf::compiler::kotlin::KotlinGenerator",
     },
     {
         "name": "objc",

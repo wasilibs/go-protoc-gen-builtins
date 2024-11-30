@@ -1,14 +1,14 @@
-FROM ghcr.io/webassembly/wasi-sdk:sha-7ff81cb
+FROM ghcr.io/webassembly/wasi-sdk:wasi-sdk-24
 
-RUN apt-get update && apt-get install -y binaryen git patch
+RUN apt-get update && apt-get install -y binaryen git patch python3
 
 ADD buildtools/wasm/version.txt version.txt
 RUN git clone --recurse-submodules --shallow-submodules https://github.com/protocolbuffers/protobuf.git --branch $(cat version.txt | awk '{$1=$1};1') /workspace
 
-ENV CMAKE_TOOLCHAIN_FILE /usr/share/cmake/wasi-sdk-pthread.cmake
-ENV CFLAGS -D_WASI_EMULATED_MMAN -D_WASI_EMULATED_PROCESS_CLOCKS -D_WASI_EMULATED_SIGNAL -DABSL_HAVE_MMAP
-ENV CXXFLAGS $CFLAGS -fno-exceptions
-ENV LDFLAGS -lwasi-emulated-process-clocks -lwasi-emulated-mman -lwasi-emulated-signal -Wl,--max-memory=4294967296 -Wl,--global-base=1024
+ENV CMAKE_TOOLCHAIN_FILE=/opt/wasi-sdk/share/cmake/wasi-sdk-pthread.cmake
+ENV CFLAGS="-D_WASI_EMULATED_MMAN -D_WASI_EMULATED_PROCESS_CLOCKS -D_WASI_EMULATED_SIGNAL -DABSL_HAVE_MMAP"
+ENV CXXFLAGS="$CFLAGS -fno-exceptions"
+ENV LDFLAGS="-lwasi-emulated-process-clocks -lwasi-emulated-mman -lwasi-emulated-signal -Wl,--max-memory=4294967296 -Wl,--global-base=1024"
 
 WORKDIR /workspace
 
