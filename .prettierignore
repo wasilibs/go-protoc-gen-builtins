@@ -1,0 +1,3 @@
+# prettier-plugin-sh advertises Dockerfile support incorrectly
+# https://github.com/mvdan/sh/issues/640
+Dockerfile
