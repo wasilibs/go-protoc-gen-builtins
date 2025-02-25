@@ -48,6 +48,9 @@ installation of tools, besides Go itself, on any platform that Go supports. The 
 `@latest`, but it is recommended to specify a version, in which case all of the developers on your
 codebase will use the same version of the tool with no special steps.
 
+_Due to [potential build breakage](https://github.com/golang/go/issues/71192) unrelated to this project,
+`go tool` is not supported._
+
 For gRPC plugins, also see [go-protoc-gen-grpc][4].
 
 A full example is available at [example](./example/). To generate protos, enter the directory and run
