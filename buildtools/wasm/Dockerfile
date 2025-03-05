@@ -1,20 +1,13 @@
 FROM ghcr.io/webassembly/wasi-sdk:wasi-sdk-24
 
-RUN apt-get update && apt-get install -y binaryen git patch python3
-
-ADD buildtools/wasm/version.txt version.txt
-RUN git clone --recurse-submodules --shallow-submodules https://github.com/protocolbuffers/protobuf.git --branch $(cat version.txt | awk '{$1=$1};1') /workspace
-
-ENV CMAKE_TOOLCHAIN_FILE=/opt/wasi-sdk/share/cmake/wasi-sdk-pthread.cmake
-ENV CFLAGS="-D_WASI_EMULATED_MMAN -D_WASI_EMULATED_PROCESS_CLOCKS -D_WASI_EMULATED_SIGNAL -DABSL_HAVE_MMAP"
-ENV CXXFLAGS="$CFLAGS -fno-exceptions"
-ENV LDFLAGS="-lwasi-emulated-process-clocks -lwasi-emulated-mman -lwasi-emulated-signal -Wl,--max-memory=4294967296 -Wl,--global-base=1024"
+RUN apt-get update && apt-get install -y binaryen git curl patch python3
 
 WORKDIR /workspace
+ADD buildtools/wasm/version.txt version.txt
+
+RUN curl -L https://github.com/protocolbuffers/protobuf/archive/refs/tags/$(cat version.txt | awk '{$1=$1};1').tar.gz | tar -xz --strip-components 1 -C /workspace
 
 ADD buildtools/wasm/patch-absl.txt patch-absl.txt
-RUN cd third_party/abseil-cpp && patch -p1 < ../../patch-absl.txt
-
 ADD buildtools/wasm/patch.txt patch.txt
 RUN patch -p1 < patch.txt
 
@@ -30,7 +23,16 @@ RUN rm src/google/protobuf/compiler/subprocess.* src/google/protobuf/compiler/co
 RUN sed -i '/src\/google\/protobuf\/compiler\/subprocess\./d' src/file_lists.cmake
 RUN sed -i '/src\/google\/protobuf\/compiler\/command_line_interface\./d' src/file_lists.cmake
 
-RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="$CFLAGS" -DCMAKE_CXX_FLAGS="$CXXFLAGS" -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS" -S . -B build
+ENV CMAKE_TOOLCHAIN_FILE=/opt/wasi-sdk/share/cmake/wasi-sdk-pthread.cmake
+ENV CFLAGS="-D_WASI_EMULATED_MMAN -D_WASI_EMULATED_PROCESS_CLOCKS -D_WASI_EMULATED_SIGNAL -DABSL_HAVE_MMAP -DABSL_FORCE_THREAD_IDENTITY_MODE=1"
+ENV CXXFLAGS="$CFLAGS -fno-exceptions"
+ENV LDFLAGS="-lwasi-emulated-process-clocks -lwasi-emulated-mman -lwasi-emulated-signal -Wl,--max-memory=4294967296 -Wl,--global-base=1024"
+
+RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="$CFLAGS" -DCMAKE_CXX_FLAGS="$CXXFLAGS" -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS" -Dprotobuf_BUILD_TESTS=off -S . -B build
+
+# cmake automatically downloads abseil in previous step so we patch here before then building
+RUN cd build/_deps/absl-src/ && patch -p1 < ../../../patch-absl.txt
+
 RUN cmake --build build --target plugins protoc-gen-upb protoc-gen-upbdefs protoc-gen-upb_minitable -j 2
 
 SHELL ["/bin/bash", "-c"]
