@@ -49,6 +49,11 @@ plugins = [
         "include": "google/protobuf/compiler/rust/generator.h",
         "generator": "::google::protobuf::compiler::rust::RustGenerator",
     },
+    {
+        "name": "upb_minitable",
+        "include": "upb_generator/minitable/generator.h",
+        "generator": "upb::generator::MiniTableGenerator",
+    },
 ]
 
 with open('main.cc', 'r') as maincc:
@@ -67,7 +72,7 @@ for plugin in plugins:
     
 set(protoc-gen-{plugin['name']}_files ${{protobuf_SOURCE_DIR}}/src/main_{plugin['name']}.cc)
 add_executable(protoc-gen-{plugin['name']} ${{protoc-gen-{plugin['name']}_files}} ${{protobuf_version_rc_file}})
-target_link_libraries(protoc-gen-{plugin['name']} libprotoc libprotobuf ${{protobuf_ABSL_USED_TARGETS}})
+target_link_libraries(protoc-gen-{plugin['name']} libprotoc libprotobuf libupb ${{protobuf_ABSL_USED_TARGETS}})
 set_target_properties(protoc-gen-{plugin['name']} PROPERTIES VERSION ${{protobuf_VERSION}})
 add_dependencies(plugins protoc-gen-{plugin['name']})
 """
