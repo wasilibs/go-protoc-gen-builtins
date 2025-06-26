@@ -75,8 +75,9 @@ func TestBuf(t *testing.T) {
 			env := os.Environ()
 			pluginsDirAbs, _ := filepath.Abs(pluginsDir)
 			for i, val := range env {
-				if strings.HasPrefix(val, "PATH=") {
-					pathVal := pluginsDirAbs + string(os.PathListSeparator) + val
+				k, v, _ := strings.Cut(val, "=")
+				if k == "PATH" {
+					pathVal := pluginsDirAbs + string(os.PathListSeparator) + v
 					env[i] = "PATH=" + pathVal
 				}
 			}
