@@ -3,7 +3,7 @@
 go-protoc-gen-builtins is a distribution of the code generator plugins from protoc, the
 [protocol buffers][1] compiler, that can be built with Go. It does not actually reimplement any
 functionality of protoc in Go, instead compiling the original source code to WebAssembly, and
-executing with the pure Go Wasm runtime [wazero][2]. This means that `go install` or `go run`
+executing with the pure Go Wasm runtime [wazero][2]. This means that `go install` or `go tool`
 can be used to execute it, with no need to rely on external package managers such as Homebrew,
 on any platform that Go supports.
 
@@ -31,15 +31,16 @@ plugins:
 
 Note that with v2 format, you must use `local` and `protoc-gen-<plugin>`, not `protoc_builtin`.
 
-To avoid installation entirely, it can be convenient to use `go run` with `path` instead.
+To avoid installation entirely, it can be convenient to use `go tool` with `local` instead.
+
+```gomod
+tool github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python
+```
 
 ```yaml
 version: v2
 plugins:
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest
+  - local: [go, tool, protoc-gen-python]
     out: out/python
 ```
 
@@ -48,15 +49,12 @@ installation of tools, besides Go itself, on any platform that Go supports. The 
 `@latest`, but it is recommended to specify a version, in which case all of the developers on your
 codebase will use the same version of the tool with no special steps.
 
-_Due to [potential build breakage](https://github.com/golang/go/issues/71192) unrelated to this project,
-`go tool` is not supported._
-
 For gRPC plugins, also see [go-protoc-gen-grpc][4].
 
 A full example is available at [example](./example/). To generate protos, enter the directory and run
-`go run github.com/bufbuild/buf/cmd/buf@v1.45.0 generate`. As long as your machine has Go installed,
-you will be able to generate protos. The first time using `go run` for a command, Go automatically builds
-it making it slower, but subsequent invocations should be quite fast.
+`go tool buf generate`. As long as your machine has Go installed, you will be able to generate protos.
+The first time using `go tool` for a command, Go automatically builds it making it slower, but subsequent
+invocations should be quite fast.
 
 [1]: https://protobuf.dev/
 [2]: https://wazero.io/
