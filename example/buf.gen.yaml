@@ -1,166 +1,70 @@
 version: v2
 plugins:
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb@v1.28.1
+  - local: [go, tool, protoc-gen-upb]
     out: out/c
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upbdefs@v1.28.1
+  - local: [go, tool, protoc-gen-upbdefs]
     out: out/c
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb_minitable@v1.28.1
+  - local: [go, tool, protoc-gen-upb_minitable]
     out: out/c
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-cpp@v1.28.1
+  - local: [go, tool, protoc-gen-cpp]
     out: out/cpp
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_cpp@v1.66.0
+  - local: [go, tool, protoc-gen-grpc_cpp]
     out: out/cpp
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-csharp@v1.28.1
+  - local: [go, tool, protoc-gen-csharp]
     out: out/csharp
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_csharp@v1.66.0
+  - local: [go, tool, protoc-gen-grpc_csharp]
     out: out/csharp
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.2.0
+  - local: [go, tool, protoc-gen-es]
     out: out/es
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-connect-es/cmd/protoc-gen-connect-es@v1.6.0
+  - local: [go, tool, protoc-gen-connect-es]
     out: out/es
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-connect-query/cmd/protoc-gen-connect-query@v1.4.2
+  - local: [go, tool, protoc-gen-connect-query]
     out: out/es
-  - local:
-      - go
-      - run
-      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.34.1
+  - local: [go, tool, protoc-gen-go]
     out: out/go
-  - local:
-      - go
-      - run
-      - google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.4.0
+  - local: [go, tool, protoc-gen-go-grpc]
     out: out/go
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-java@v1.28.1
+  - local: [go, tool, protoc-gen-java]
     out: out/java
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.66.0
+  - local: [go, tool, protoc-gen-grpc-java]
     out: out/java
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-kotlin@v1.28.1
+  - local: [go, tool, protoc-gen-kotlin]
     out: out/kotlin
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-objc@v1.28.1
+  - local: [go, tool, protoc-gen-objc]
     out: out/objc
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_objective_c@v1.66.0
+  - local: [go, tool, protoc-gen-grpc_objective_c]
     out: out/objc
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_node@v1.66.0
+  - local: [go, tool, protoc-gen-grpc_node]
     out: out/node
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-php@v1.28.1
+  - local: [go, tool, protoc-gen-php]
     out: out/php
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_php@v1.66.0
+  - local: [go, tool, protoc-gen-grpc_php]
     out: out/php
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-pyi@v1.28.1
+  - local: [go, tool, protoc-gen-pyi]
     out: out/python
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@v1.28.1
+  - local: [go, tool, protoc-gen-python]
     out: out/python
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_python@v1.66.0
+  - local: [go, tool, protoc-gen-grpc_python]
     out: out/python
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-mypy/cmd/protoc-gen-mypy@v1.3.5
+  - local: [go, tool, protoc-gen-mypy]
     out: out/python/mypy
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-ruby@v1.28.1
+  - local: [go, tool, protoc-gen-ruby]
     out: out/ruby
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_ruby@v1.66.0
+  - local: [go, tool, protoc-gen-grpc_ruby]
     out: out/ruby
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-rust@v1.28.1
+  - local: [go, tool, protoc-gen-rust]
     out: out/rust
     opt: experimental-codegen=enabled,kernel=upb
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost@v0.13.3
+  - local: [go, tool, protoc-gen-prost]
     out: out/rust
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost-crate@v0.13.3
+  - local: [go, tool, protoc-gen-prost-crate]
     strategy: all
     opt:
       - no_features
     out: out/rust
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost-serde@v0.13.3
+  - local: [go, tool, protoc-gen-prost-serde]
     out: out/rust
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-swift/cmd/protoc-gen-swift@v1.28.2
+  - local: [go, tool, protoc-gen-swift]
     out: out/swift
-  - local:
-      - go
-      - run
-      - github.com/wasilibs/go-protoc-gen-zig/cmd/protoc-gen-zig@v1.0.5
+  - local: [go, tool, protoc-gen-zig]
     out: out/zig
