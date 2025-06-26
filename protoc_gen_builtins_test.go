@@ -1,4 +1,4 @@
-package protoc_gen_builtins
+package protocgenbuiltins
 
 import (
 	"bytes"
@@ -18,7 +18,6 @@ var bufGenGorunYaml []byte
 var bufGenInstalledYaml []byte
 
 func TestBuf(t *testing.T) {
-	goExe := filepath.Join(runtime.GOROOT(), "bin", "go")
 	if err := os.RemoveAll(filepath.Join("out", "buf")); err != nil {
 		t.Fatalf("failed to remove out directory: %v", err)
 	}
@@ -31,7 +30,7 @@ func TestBuf(t *testing.T) {
 	plugins := []string{"cpp", "csharp", "java", "kotlin", "objc", "php", "pyi", "python", "ruby", "rust", "upb", "upbdefs", "upb_minitable"}
 	for _, plugin := range plugins {
 		output := bytes.Buffer{}
-		cmd := exec.Command(goExe, "build", "-o", filepath.Join(pluginsDir, "protoc-gen-"+plugin), "./cmd/protoc-gen-"+plugin)
+		cmd := exec.Command("go", "build", "-o", filepath.Join(pluginsDir, "protoc-gen-"+plugin), "./cmd/protoc-gen-"+plugin)
 		cmd.Stderr = &output
 		cmd.Stdout = &output
 		if err := cmd.Run(); err != nil {
@@ -54,7 +53,6 @@ func TestBuf(t *testing.T) {
 	}
 
 	for _, tc := range tests {
-		tc := tc
 		t.Run(tc.name, func(t *testing.T) {
 			// We can only have one buf.gen.yaml at a time since buf provides no way of
 			// an alternate config file for generation. This also means this should never
@@ -78,11 +76,11 @@ func TestBuf(t *testing.T) {
 			pluginsDirAbs, _ := filepath.Abs(pluginsDir)
 			for i, val := range env {
 				if strings.HasPrefix(val, "PATH=") {
-					pathVal := pluginsDirAbs + string(os.PathListSeparator) + filepath.Join(runtime.GOROOT(), "bin")
+					pathVal := pluginsDirAbs + string(os.PathListSeparator) + val
 					env[i] = "PATH=" + pathVal
 				}
 			}
-			cmd := exec.Command(goExe, "run", "github.com/bufbuild/buf/cmd/buf@v1.45.0", "generate")
+			cmd := exec.Command("go", "run", "github.com/bufbuild/buf/cmd/buf@v1.45.0", "generate")
 			cmd.Stderr = &output
 			cmd.Stdout = &output
 			cmd.Env = env

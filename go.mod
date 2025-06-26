@@ -1,6 +1,6 @@
 module github.com/wasilibs/go-protoc-gen-builtins
 
-go 1.23.0
+go 1.24.4
 
 require github.com/tetratelabs/wazero v1.9.0
 
