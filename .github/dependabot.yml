@@ -17,6 +17,9 @@ updates:
       interval: weekly
     allow:
       - dependency-type: all
+    ignore:
+      # Latest version incompatible with buf
+      - dependency-name: github.com/quic-go/quic-go
     groups:
       go:
         patterns:
