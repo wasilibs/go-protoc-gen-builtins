@@ -49,11 +49,6 @@ plugins = [
         "include": "google/protobuf/compiler/rust/generator.h",
         "generator": "::google::protobuf::compiler::rust::RustGenerator",
     },
-    {
-        "name": "upb_minitable",
-        "include": "upb_generator/minitable/generator.h",
-        "generator": "upb::generator::MiniTableGenerator",
-    },
 ]
 
 with open('main.cc', 'r') as maincc:
