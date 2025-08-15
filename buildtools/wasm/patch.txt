@@ -11,7 +11,7 @@ index 0f25c4bf1..beb604fd1 100644
  #include <stddef.h>
  #include <stdint.h>
 diff --git a/upb/port/def.inc b/upb/port/def.inc
-index a46ca2390..cdf314c3e 100644
+index d8ccc7b8f..a9464dbcc 100644
 --- a/upb/port/def.inc
 +++ b/upb/port/def.inc
 @@ -70,7 +70,6 @@
@@ -22,7 +22,7 @@ index a46ca2390..cdf314c3e 100644
  #include <stdbool.h>
  #include <stdint.h>
  #include <stdio.h>
-@@ -304,8 +303,9 @@ Error, UINTPTR_MAX is undefined
+@@ -340,8 +339,9 @@ Error, UINTPTR_MAX is undefined
  #define UPB_SETJMP(buf) 0
  #define UPB_LONGJMP(buf, val) abort()
  #else
@@ -59,7 +59,7 @@ index c3723863c..b453cd151 100644
  #include <stdbool.h>
  #include <stddef.h>
 diff --git a/upb/wire/encode.c b/upb/wire/encode.c
-index 1165fe587..effd28d1b 100644
+index 06e83aab4..6240dae28 100644
 --- a/upb/wire/encode.c
 +++ b/upb/wire/encode.c
 @@ -9,7 +9,6 @@
@@ -70,3 +70,15 @@ index 1165fe587..effd28d1b 100644
  #include <stdbool.h>
  #include <stdint.h>
  #include <stdlib.h>
+diff --git a/upb/wire/internal/decoder.h b/upb/wire/internal/decoder.h
+index 8f5299d97..5f32fdf9f 100644
+--- a/upb/wire/internal/decoder.h
++++ b/upb/wire/internal/decoder.h
+@@ -13,7 +13,6 @@
+ #ifndef UPB_WIRE_INTERNAL_DECODER_H_
+ #define UPB_WIRE_INTERNAL_DECODER_H_
+ 
+-#include <setjmp.h>
+ #include <stddef.h>
+ #include <stdint.h>
+ #include <string.h>
