@@ -6,4 +6,4 @@ require github.com/tetratelabs/wazero v1.9.0
 
 require github.com/wasilibs/wazero-helpers v0.0.0-20240604052452-61d7981e9a38
 
-require github.com/stretchr/testify v1.10.0 // indirect
+require github.com/stretchr/testify v1.11.0 // indirect
