@@ -27,7 +27,7 @@ jobs:
           cache-dependency-path: "**/go.mod"
 
       - name: build example
-        run: go tool buf generate
+        run: go run github.com/bufbuild/buf/cmd/buf@v1.57.0 generate
         working-directory: example
         env:
           GOWORK: off
