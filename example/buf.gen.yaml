@@ -187,6 +187,6 @@ plugins:
   - local:
       - go
       - run
-      # renovate: github.com/wasilibs/go-protoc-gen-grpc-zig/v2
+      # renovate: github.com/wasilibs/go-protoc-gen-zig/v2
       - github.com/wasilibs/go-protoc-gen-zig/v2/cmd/protoc-gen-zig@v2.1.0
     out: out/zig
