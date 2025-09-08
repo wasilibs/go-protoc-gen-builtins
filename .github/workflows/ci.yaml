@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    uses: wasilibs/actions/.github/workflows/ci.yaml@435fbabb9723e77fd6ba71e6ec8744efd1a56be1
+    uses: wasilibs/actions/.github/workflows/ci.yaml@210b313e3518057fb10083464e623bd154660309
     secrets: inherit
 
   example:
@@ -18,16 +18,8 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-        with:
-          fetch-depth: 0
 
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
-        with:
-          go-version-file: go.work
-          cache-dependency-path: "**/go.mod"
+      - uses: curioswitch/go-build/.github/actions/setup-go@ca2ad273d58ad18f420e280ac203662d9769680f # v0.6.0
 
       - name: build example
-        run: go run github.com/bufbuild/buf/cmd/buf@v1.57.0 generate
-        working-directory: example
-        env:
-          GOWORK: off
+        run: go run ./build example

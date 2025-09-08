@@ -81,7 +81,7 @@ func TestBuf(t *testing.T) {
 					env[i] = "PATH=" + pathVal
 				}
 			}
-			cmd := exec.Command("go", "run", "github.com/bufbuild/buf/cmd/buf@v1.57.0", "generate")
+			cmd := exec.Command("go", "run", "github.com/bufbuild/buf/cmd/buf@"+verBuf, "generate")
 			cmd.Stderr = &output
 			cmd.Stdout = &output
 			cmd.Env = env
