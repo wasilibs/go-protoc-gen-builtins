@@ -4,25 +4,25 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb@v1.32.1
     out: out/c
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upbdefs@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upbdefs@v1.32.1
     out: out/c
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb_minitable@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb_minitable@v1.32.1
     out: out/c
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-cpp@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-cpp@v1.32.1
     out: out/cpp
   - local:
       - go
@@ -34,7 +34,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-csharp@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-csharp@v1.32.1
     out: out/csharp
   - local:
       - go
@@ -46,7 +46,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-es/v2
-      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.7.0
+      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.8.0
     out: out/es
   - local:
       - go
@@ -58,7 +58,7 @@ plugins:
       - go
       - run
       # renovate: google.golang.org/protobuf
-      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.8
+      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.9
     out: out/go
   - local:
       - go
@@ -70,7 +70,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-java@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-java@v1.32.1
     out: out/java
   - local:
       - go
@@ -82,13 +82,13 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-kotlin@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-kotlin@v1.32.1
     out: out/kotlin
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-objc@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-objc@v1.32.1
     out: out/objc
   - local:
       - go
@@ -106,7 +106,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-php@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-php@v1.32.1
     out: out/php
   - local:
       - go
@@ -118,13 +118,13 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-pyi@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-pyi@v1.32.1
     out: out/python
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@v1.32.1
     out: out/python
   - local:
       - go
@@ -142,7 +142,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-ruby@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-ruby@v1.32.1
     out: out/ruby
   - local:
       - go
@@ -154,7 +154,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
-      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-rust@v1.32.0
+      - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-rust@v1.32.1
     out: out/rust
     opt: experimental-codegen=enabled,kernel=upb
   - local:
