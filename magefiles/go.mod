@@ -1,8 +1,6 @@
 module magefiles
 
-go 1.21
-
-toolchain go1.21.5
+go 1.23.0
 
 require (
 	github.com/aymanbagabas/go-osc52 v1.0.3 // indirect
@@ -18,9 +16,9 @@ require (
 	github.com/muesli/termenv v0.13.0 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/thlib/go-timezone-local v0.0.0-20210907160436-ef149e42d28e // indirect
-	golang.org/x/sys v0.13.0 // indirect
-	golang.org/x/term v0.13.0 // indirect
-	golang.org/x/text v0.13.0 // indirect
+	golang.org/x/sys v0.33.0 // indirect
+	golang.org/x/term v0.32.0 // indirect
+	golang.org/x/text v0.26.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
@@ -29,3 +27,5 @@ require (
 	github.com/google/go-github/v58 v58.0.0
 	github.com/wasilibs/magefiles v0.0.0-20240111081200-bb6d5c95f839
 )
+
+require github.com/google/go-cmp v0.7.0 // indirect
