@@ -5,164 +5,164 @@ plugins:
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb@v1.32.1
-    out: out/c
+    out: ../out/c
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upbdefs@v1.32.1
-    out: out/c
+    out: ../out/c
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-upb_minitable@v1.32.1
-    out: out/c
+    out: ../out/c
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-cpp@v1.32.1
-    out: out/cpp
+    out: ../out/cpp
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
       - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_cpp@v1.75.0
-    out: out/cpp
+    out: ../out/cpp
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-csharp@v1.32.1
-    out: out/csharp
+    out: ../out/csharp
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
       - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_csharp@v1.75.0
-    out: out/csharp
+    out: ../out/csharp
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-es/v2
       - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.9.0
-    out: out/es
+    out: ../out/es
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-connect-query/v2
       - github.com/wasilibs/go-protoc-gen-connect-query/v2/cmd/protoc-gen-connect-query@v2.0.1
-    out: out/es
+    out: ../out/es
   - local:
       - go
       - run
       # renovate: google.golang.org/protobuf
       - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.9
-    out: out/go
+    out: ../out/go
   - local:
       - go
       - run
       # renovate: google.golang.org/grpc/cmd/protoc-gen-go-grpc
       - google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.5.1
-    out: out/go
+    out: ../out/go
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-java@v1.32.1
-    out: out/java
+    out: ../out/java
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc-java
       - github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.75.0
-    out: out/java
+    out: ../out/java
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-kotlin@v1.32.1
-    out: out/kotlin
+    out: ../out/kotlin
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-objc@v1.32.1
-    out: out/objc
+    out: ../out/objc
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
       - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_objective_c@v1.75.0
-    out: out/objc
+    out: ../out/objc
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
       - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_node@v1.75.0
-    out: out/node
+    out: ../out/node
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-php@v1.32.1
-    out: out/php
+    out: ../out/php
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
       - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_php@v1.75.0
-    out: out/php
+    out: ../out/php
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-pyi@v1.32.1
-    out: out/python
+    out: ../out/python
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@v1.32.1
-    out: out/python
+    out: ../out/python
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
       - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_python@v1.75.0
-    out: out/python
+    out: ../out/python
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-mypy
       - github.com/wasilibs/go-protoc-gen-mypy/cmd/protoc-gen-mypy@v1.3.5
-    out: out/python/mypy
+    out: ../out/python/mypy
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-ruby@v1.32.1
-    out: out/ruby
+    out: ../out/ruby
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
       - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_ruby@v1.75.0
-    out: out/ruby
+    out: ../out/ruby
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-builtins
       - github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-rust@v1.32.1
-    out: out/rust
+    out: ../out/rust
     opt: experimental-codegen=enabled,kernel=upb
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-prost
       - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost@v0.13.4
-    out: out/rust
+    out: ../out/rust
   - local:
       - go
       - run
@@ -171,22 +171,22 @@ plugins:
     strategy: all
     opt:
       - no_features
-    out: out/rust
+    out: ../out/rust
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-prost
       - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost-serde@v0.13.4
-    out: out/rust
+    out: ../out/rust
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-swift
       - github.com/wasilibs/go-protoc-gen-swift/cmd/protoc-gen-swift@v1.28.2
-    out: out/swift
+    out: ../out/swift
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-zig/v2
       - github.com/wasilibs/go-protoc-gen-zig/v2/cmd/protoc-gen-zig@v2.1.0
-    out: out/zig
+    out: ../out/zig
