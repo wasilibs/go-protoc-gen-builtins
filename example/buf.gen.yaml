@@ -52,7 +52,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-connect-query/v2
-      - github.com/wasilibs/go-protoc-gen-connect-query/v2/cmd/protoc-gen-connect-query@v2.0.1
+      - github.com/wasilibs/go-protoc-gen-connect-query/v2/cmd/protoc-gen-connect-query@v2.2.0
     out: ../out/es
   - local:
       - go
