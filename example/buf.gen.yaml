@@ -58,7 +58,7 @@ plugins:
       - go
       - run
       # renovate: google.golang.org/protobuf
-      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.9
+      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.10
     out: ../out/go
   - local:
       - go
@@ -76,7 +76,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc-java
-      - github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.76.0
     out: ../out/java
   - local:
       - go
