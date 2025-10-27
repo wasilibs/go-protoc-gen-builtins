@@ -28,7 +28,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_cpp@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_cpp@v1.76.0
     out: ../out/cpp
   - local:
       - go
@@ -40,13 +40,13 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_csharp@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_csharp@v1.76.0
     out: ../out/csharp
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-es/v2
-      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.9.0
+      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.10.0
     out: ../out/es
   - local:
       - go
@@ -94,13 +94,13 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_objective_c@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_objective_c@v1.76.0
     out: ../out/objc
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_node@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_node@v1.76.0
     out: ../out/node
   - local:
       - go
@@ -112,7 +112,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_php@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_php@v1.76.0
     out: ../out/php
   - local:
       - go
@@ -130,7 +130,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_python@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_python@v1.76.0
     out: ../out/python
   - local:
       - go
@@ -148,7 +148,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc
-      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_ruby@v1.75.0
+      - github.com/wasilibs/go-protoc-gen-grpc/cmd/protoc-gen-grpc_ruby@v1.76.0
     out: ../out/ruby
   - local:
       - go
