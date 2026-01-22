@@ -29,8 +29,7 @@ func Run(name string, wasmBin []byte) {
 		log.Fatal(err)
 	}
 
-	args := []string{name}
-	args = append(args, os.Args[1:]...)
+	args := append([]string{name}, os.Args[1:]...)
 
 	cfg := wazero.NewModuleConfig().
 		WithSysNanosleep().
