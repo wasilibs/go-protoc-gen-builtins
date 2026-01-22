@@ -3,10 +3,10 @@ module build
 go 1.25.2
 
 require (
-	github.com/curioswitch/go-build v0.6.3
-	github.com/goyek/goyek/v2 v2.3.0
-	github.com/goyek/x v0.3.0
-	github.com/wasilibs/tools v0.0.0-20251104013758-cd152451c6f6
+	github.com/curioswitch/go-build v0.7.1
+	github.com/goyek/goyek/v3 v3.0.1
+	github.com/goyek/x v0.4.0
+	github.com/wasilibs/tools v0.0.0-20260122051245-ab3579b3018a
 )
 
 require (
@@ -25,7 +25,6 @@ require (
 	github.com/mattn/go-shellwords v1.0.12 // indirect
 	github.com/muesli/termenv v0.16.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
-	github.com/stretchr/testify v1.11.1 // indirect
 	github.com/thlib/go-timezone-local v0.0.7 // indirect
 	golang.org/x/sys v0.35.0 // indirect
 	golang.org/x/term v0.34.0 // indirect
