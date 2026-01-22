@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-      - uses: curioswitch/go-build/.github/actions/setup-go@ca2ad273d58ad18f420e280ac203662d9769680f # v0.6.0
+      - uses: curioswitch/go-build/.github/actions/setup-go@8304121f488a5faa0b1ff094b6e2abc8da5b6c43 # v0.7.1
 
       - name: build example
         run: go run ./build example
