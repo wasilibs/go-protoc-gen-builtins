@@ -76,7 +76,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-grpc-java
-      - github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.76.0
+      - github.com/wasilibs/go-protoc-gen-grpc-java/cmd/protoc-gen-grpc-java@v1.78.0
     out: ../out/java
   - local:
       - go
