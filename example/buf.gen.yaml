@@ -64,7 +64,7 @@ plugins:
       - go
       - run
       # renovate: google.golang.org/grpc/cmd/protoc-gen-go-grpc
-      - google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.6.0
+      - google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.6.1
     out: ../out/go
   - local:
       - go

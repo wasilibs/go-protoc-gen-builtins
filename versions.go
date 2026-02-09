@@ -1,4 +1,4 @@
 package protocgenbuiltins
 
 // renovate: github.com/bufbuild/buf
-const verBuf = "v1.64.0"
+const verBuf = "v1.65.0"
