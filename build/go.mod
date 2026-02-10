@@ -3,10 +3,10 @@ module build
 go 1.25.2
 
 require (
-	github.com/curioswitch/go-build v0.7.1
+	github.com/curioswitch/go-build v0.7.2
 	github.com/goyek/goyek/v3 v3.0.1
 	github.com/goyek/x v0.4.0
-	github.com/wasilibs/tools v0.0.0-20260127004603-45a4eb1bc2a5
+	github.com/wasilibs/tools v0.0.0-20260203001725-33cfc2ad5a0b
 )
 
 require (
