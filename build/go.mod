@@ -6,7 +6,7 @@ require (
 	github.com/curioswitch/go-build v0.7.2
 	github.com/goyek/goyek/v3 v3.0.1
 	github.com/goyek/x v0.4.0
-	github.com/wasilibs/tools v0.0.0-20260203001725-33cfc2ad5a0b
+	github.com/wasilibs/tools v0.0.0-20260210015100-7ad8c51cd631
 )
 
 require (
