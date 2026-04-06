@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    uses: wasilibs/actions/.github/workflows/ci.yaml@77762dfec6f9722d1b57acdfe352dcd16a1dc272
+    uses: wasilibs/actions/.github/workflows/ci.yaml@5bf268fde802fe591d6148e69a7ddb046384d657
     secrets: inherit
 
   example:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - uses: curioswitch/go-build/.github/actions/setup-go@91ef77720b0c28ee035379d1955413c4e2a230b8 # v0.7.2
+      - uses: curioswitch/go-build/.github/actions/setup-go@338fc9f50df6cb664134b5c600630dcbc483d81f # v0.7.3
 
       - name: build example
         run: go run ./build example
