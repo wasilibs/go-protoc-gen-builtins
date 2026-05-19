@@ -64,7 +64,7 @@ plugins:
       - go
       - run
       # renovate: google.golang.org/grpc/cmd/protoc-gen-go-grpc
-      - google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.6.1
+      - google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.6.2
     out: ../out/go
   - local:
       - go
@@ -161,13 +161,13 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-prost
-      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost@v0.13.4
+      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost@v0.14.3
     out: ../out/rust
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-prost
-      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost-crate@v0.13.4
+      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost-crate@v0.14.3
     strategy: all
     opt:
       - no_features
@@ -176,7 +176,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-prost
-      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost-serde@v0.13.4
+      - github.com/wasilibs/go-protoc-gen-prost/cmd/protoc-gen-prost-serde@v0.14.3
     out: ../out/rust
   - local:
       - go
