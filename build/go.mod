@@ -6,7 +6,7 @@ require (
 	github.com/curioswitch/go-build v0.7.3
 	github.com/goyek/goyek/v3 v3.0.1
 	github.com/goyek/x v0.4.0
-	github.com/wasilibs/tools v0.0.0-20260519030106-5149b8046e4d
+	github.com/wasilibs/tools v0.0.0-20260526011908-2898220f11f0
 )
 
 require (
@@ -16,7 +16,7 @@ require (
 	github.com/cli/shurcooL-graphql v0.0.4 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/google/go-github/v74 v74.0.0 // indirect
-	github.com/google/go-querystring v1.1.0 // indirect
+	github.com/google/go-querystring v1.2.0 // indirect
 	github.com/henvic/httpretty v0.1.4 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
@@ -26,7 +26,7 @@ require (
 	github.com/muesli/termenv v0.16.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/thlib/go-timezone-local v0.0.7 // indirect
-	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/sys v0.44.0 // indirect
 	golang.org/x/term v0.34.0 // indirect
 	golang.org/x/text v0.28.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
