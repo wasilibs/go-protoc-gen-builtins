@@ -17,9 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
-      - uses: curioswitch/go-build/.github/actions/setup-go@338fc9f50df6cb664134b5c600630dcbc483d81f # v0.7.3
+      - uses: curioswitch/go-build/.github/actions/setup-go@6534a812de759839af8aae5643bcd5a3c181e436 # v0.7.4
 
       - name: build example
         run: go run ./build example
