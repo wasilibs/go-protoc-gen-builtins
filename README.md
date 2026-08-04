@@ -20,7 +20,7 @@ Precompiled binaries are available in the [releases](https://github.com/wasilibs
 Alternatively, install the plugin you want using `go install`.
 
 ```bash
-$ go install github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest
+go install github.com/wasilibs/go-protoc-gen-builtins/cmd/protoc-gen-python@latest
 ```
 
 As long as `$GOPATH/bin`, e.g. `~/go/bin` is on the `PATH`, `buf` should find it automatically.
