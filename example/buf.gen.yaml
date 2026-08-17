@@ -46,19 +46,19 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-es/v2
-      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.13.0
+      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.14.0
     out: ../out/es
   - local:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-connect-query/v2
-      - github.com/wasilibs/go-protoc-gen-connect-query/v2/cmd/protoc-gen-connect-query@v2.2.0
+      - github.com/wasilibs/go-protoc-gen-connect-query/v2/cmd/protoc-gen-connect-query@v2.3.1
     out: ../out/es
   - local:
       - go
       - run
       # renovate: google.golang.org/protobuf
-      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.11
+      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12
     out: ../out/go
   - local:
       - go
