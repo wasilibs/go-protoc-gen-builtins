@@ -1,12 +1,12 @@
 module build
 
-go 1.25.2
+go 1.26.0
 
 require (
-	github.com/curioswitch/go-build v0.8.3
+	github.com/curioswitch/go-build v0.9.0
 	github.com/goyek/goyek/v3 v3.0.1
 	github.com/goyek/x v0.4.0
-	github.com/wasilibs/tools v0.0.0-20260818004739-270e8e9442c5
+	github.com/wasilibs/tools v0.0.0-20260904015258-fb5989dc46c6
 )
 
 require (
@@ -15,7 +15,7 @@ require (
 	github.com/cli/safeexec v1.0.1 // indirect
 	github.com/cli/shurcooL-graphql v0.0.4 // indirect
 	github.com/fatih/color v1.18.0 // indirect
-	github.com/google/go-github/v74 v74.0.0 // indirect
+	github.com/google/go-github/v91 v91.0.0 // indirect
 	github.com/google/go-querystring v1.2.0 // indirect
 	github.com/henvic/httpretty v0.1.4 // indirect
 	github.com/kr/text v0.2.0 // indirect
