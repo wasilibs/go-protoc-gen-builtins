@@ -46,7 +46,7 @@ plugins:
       - go
       - run
       # renovate: github.com/wasilibs/go-protoc-gen-es/v2
-      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.14.1
+      - github.com/wasilibs/go-protoc-gen-es/v2/cmd/protoc-gen-es@v2.15.0
     out: ../out/es
   - local:
       - go
